@@ -11,14 +11,14 @@
     --bg2: #ffffff;
     --bg3: #f0f2f5;
     --border: #e2e6ea;
-    --accent: #0066cc;
+    --accent: #0052cc;
     --accent2: #0099ff;
-    --red: #e03131;
-    --yellow: #e67700;
+    --red: #c92a2a;
+    --yellow: #d9480f;
     --text: #1a1d21;
     --text2: #495057;
     --text3: #868e96;
-    --green: #2f9e44;
+    --green: #2b8a3e;
     --card: #ffffff;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -69,7 +69,7 @@
   .home-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
   .stat-card { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
   .stat-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
-  .stat-value { font-family:'Space Mono', monospace; font-size:18px; font-weight:700; }
+  .stat-value { font-family:'Space Mono', monospace; font-size:20px; font-weight:700; }
   .stat-sub { font-size:11px; color:var(--text2); margin-top:2px; }
   .positive { color:var(--green); }
   .negative { color:var(--red); }
@@ -79,7 +79,7 @@
   /* STOCK VIEW */
   #stock-view { display:none; padding:16px 24px; max-width:1100px; }
   .stock-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
-  .stock-ticker { font-family:'Space Mono', monospace; font-size:22px; color:var(--accent); font-weight:700; }
+  .stock-ticker { font-family:'Space Mono', monospace; font-size:24px; color:var(--accent); font-weight:700; }
   .stock-name { font-size:13px; color:var(--text2); margin-top:2px; }
   .stock-badges { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
   .pill { padding:3px 10px; border-radius:12px; font-size:10px; font-family:'Space Mono', monospace; letter-spacing:0.5px; }
@@ -125,10 +125,10 @@
   /* ANALISI */
   .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .analysis-text { font-size:12px; color:var(--text2); line-height:1.6; }
-  .level-row { display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid var(--border); }
+  .level-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); }
   .level-row:last-child { border-bottom:none; }
-  .level-label { font-size:12px; color:var(--text2); }
-  .level-value { font-family:'Space Mono', monospace; font-size:12px; font-weight:700; }
+  .level-label { font-size:13px; color:var(--text); font-weight:500; }
+  .level-value { font-family:'Space Mono', monospace; font-size:14px; font-weight:700; }
 
   /* TRADINGVIEW */
   .tv-box { background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
