@@ -23,23 +23,15 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--text); font-family:'DM Sans', sans-serif; display:flex; min-height:100vh; font-size:16px; }
-
-  /* SIDEBAR */
   #sidebar {
     width:220px; min-width:220px; background:var(--bg2); border-right:1px solid var(--border);
     display:flex; flex-direction:column; position:fixed; top:0; left:0; height:100vh; overflow-y:auto; z-index:100;
   }
-  .logo {
-    padding:16px 16px 12px; border-bottom:1px solid var(--border);
-    font-family:'Space Mono', monospace; font-size:14px; color:var(--accent); letter-spacing:1px;
-  }
+  .logo { padding:16px 16px 12px; border-bottom:1px solid var(--border); font-family:'Space Mono', monospace; font-size:14px; color:var(--accent); letter-spacing:1px; }
   .logo span { color:var(--text3); font-size:10px; letter-spacing:1px; display:block; margin-top:2px; }
   .nav-section { padding:8px 0 4px; }
   .nav-label { padding:4px 14px 4px; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); font-family:'Space Mono', monospace; }
-  .nav-item {
-    padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px;
-    font-size:12px; color:var(--text2); transition:all 0.12s; border-left:2px solid transparent;
-  }
+  .nav-item { padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text2); transition:all 0.12s; border-left:2px solid transparent; }
   .nav-item:hover { background:var(--bg3); color:var(--text); }
   .nav-item.active { background:#e8f0fb; color:var(--accent); border-left-color:var(--accent); font-weight:600; }
   .nav-item .badge { margin-left:auto; font-size:9px; padding:1px 5px; border-radius:8px; font-family:'Space Mono', monospace; }
@@ -53,18 +45,11 @@
   .dot-yellow { background:var(--yellow); }
   .dot-blue { background:var(--accent); }
   .dot-gray { background:var(--text3); }
-
-  /* MAIN */
   #main { margin-left:220px; flex:1; }
-  .topbar {
-    background:var(--bg2); border-bottom:1px solid var(--border); padding:10px 24px;
-    display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:50;
-  }
+  .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:10px 24px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:50; }
   .topbar-title { font-family:'Space Mono', monospace; font-size:12px; color:var(--text3); }
   .topbar-title span { color:var(--accent); }
   .topbar-date { font-size:11px; color:var(--text3); font-family:'Space Mono', monospace; }
-
-  /* HOME */
   #home-view { padding:20px 24px; }
   .home-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
   .stat-card { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
@@ -75,8 +60,6 @@
   .negative { color:var(--red); }
   .neutral { color:var(--text); }
   .yellow { color:var(--yellow); }
-
-  /* STOCK VIEW */
   #stock-view { display:none; padding:16px 24px; max-width:1100px; }
   .stock-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
   .stock-ticker { font-family:'Space Mono', monospace; font-size:30px; color:var(--accent); font-weight:800; }
@@ -89,30 +72,19 @@
   .pill-blue { background:#d0ebff; color:var(--accent); }
   .pill-gray { background:var(--bg3); color:var(--text2); }
   .stock-actions { display:flex; gap:8px; }
-  .btn-action {
-    padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2);
-    border-radius:5px; cursor:pointer; font-size:11px; text-decoration:none; display:flex; align-items:center; gap:5px; transition:all 0.12s;
-  }
+  .btn-action { padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:5px; cursor:pointer; font-size:11px; text-decoration:none; display:flex; align-items:center; gap:5px; transition:all 0.12s; }
   .btn-action:hover { border-color:var(--accent); color:var(--accent); background:#e8f0fb; }
-
-  /* SEZIONI */
   .section { margin-bottom:16px; }
   .section-title { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); margin-bottom:8px; display:flex; align-items:center; gap:8px; font-family:'Space Mono', monospace; }
   .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
-
-  /* BOX */
   .box { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
   .box-title { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; font-family:'Space Mono', monospace; }
   .desc-text { font-size:15px; line-height:1.7; color:var(--text2); }
-
-  /* EVENTI */
   .events-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .event-item { display:flex; gap:10px; padding:6px 0; border-bottom:1px solid var(--border); }
   .event-item:last-child { border-bottom:none; }
   .event-date { font-family:'Space Mono', monospace; font-size:10px; color:var(--accent); min-width:65px; padding-top:1px; }
   .event-text { font-size:12px; color:var(--text2); line-height:1.5; }
-
-  /* GRAFICI */
   .charts-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .chart-box { background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
   .chart-box-header { padding:8px 12px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
@@ -121,46 +93,33 @@
   .chart-img { width:100%; display:block; cursor:zoom-in; transition:opacity 0.15s; }
   .chart-img:hover { opacity:0.9; }
   .chart-notes { padding:8px 12px; font-size:11px; color:var(--text2); line-height:1.5; background:var(--bg3); border-top:1px solid var(--border); }
-
-  /* ANALISI */
   .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .analysis-text { font-size:12px; color:var(--text2); line-height:1.6; }
   .level-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); }
   .level-row:last-child { border-bottom:none; }
   .level-label { font-size:15px; color:var(--text); font-weight:700; }
   .level-value { font-family:'Space Mono', monospace; font-size:18px; font-weight:800; }
-
-  /* TRADINGVIEW */
   .tv-box { background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
   .tv-header { padding:8px 12px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
   .tv-title { font-size:11px; color:var(--text2); font-family:'Space Mono', monospace; display:flex; align-items:center; gap:6px; }
   .live-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  /* LIGHTBOX */
   #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
   #lightbox.open { display:flex; }
   #lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
   #lightbox-caption { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.7); color:#fff; padding:6px 14px; border-radius:20px; font-size:12px; }
-
-  /* HOME ALERT */
   .alert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
   .alert-card { background:var(--card); border-radius:6px; padding:12px 14px; }
   .alert-card.red { border:1px solid #ffc9c9; background:#fff5f5; }
   .alert-card.yellow { border:1px solid #ffe066; background:#fffbeb; }
   .alert-card.green { border:1px solid #b2f2bb; background:#f0fff4; }
-
-  /* CALENDAR */
   .cal-item { display:flex; gap:12px; padding:8px 14px; border-bottom:1px solid var(--border); align-items:flex-start; }
   .cal-item:last-child { border-bottom:none; }
   .cal-date { font-family:'Space Mono', monospace; font-size:10px; min-width:55px; padding-top:1px; }
   .cal-text { font-size:12px; color:var(--text2); }
-
-  /* PAGE HEADER */
   .page-header { margin-bottom:16px; }
   .page-title { font-family:'Space Mono', monospace; font-size:17px; color:var(--text); }
   .page-sub { font-size:12px; color:var(--text2); margin-top:4px; }
-
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background:var(--bg); }
   ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
@@ -168,18 +127,13 @@
 </head>
 <body>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" src="" alt="">
   <div id="lightbox-caption"></div>
 </div>
 
-<!-- SIDEBAR -->
 <nav id="sidebar">
-  <div class="logo">
-    IK<span style="color:var(--text)">invest</span>
-    <span>TRADING DASHBOARD</span>
-  </div>
+  <div class="logo">IK<span style="color:var(--text)">invest</span><span>TRADING DASHBOARD</span></div>
 
   <div class="nav-section">
     <div class="nav-label">Overview</div>
@@ -189,88 +143,98 @@
   <div class="nav-section">
     <div class="nav-label">Portafoglio</div>
     <div class="nav-item" onclick="showStock('INTC',this)"><span class="nav-dot dot-green"></span> Intel <span class="badge badge-green">11 az.</span></div>
-    <div class="nav-item" onclick="showStock('NVDA',this)"><span class="nav-dot dot-green"></span> Nvidia <span class="badge badge-green">7 az.</span></div>
+    <div class="nav-item" onclick="showStock('NVDA',this)"><span class="nav-dot dot-green"></span> Nvidia <span class="badge badge-green">9 az.</span></div>
     <div class="nav-item" onclick="showStock('TSM',this)"><span class="nav-dot dot-green"></span> Taiwan Semi</div>
+    <div class="nav-item" onclick="showStock('AMKR',this)"><span class="nav-dot dot-green"></span> Amkor Tech</div>
     <div class="nav-item" onclick="showStock('ZS',this)"><span class="nav-dot dot-red"></span> Zscaler <span class="badge badge-red">⚠</span></div>
     <div class="nav-item" onclick="showStock('FRMI',this)"><span class="nav-dot dot-red"></span> Fermi <span class="badge badge-red">⚠$5</span></div>
     <div class="nav-item" onclick="showStock('ASTS',this)"><span class="nav-dot dot-red"></span> AST SpaceMobile</div>
     <div class="nav-item" onclick="showStock('ALMU',this)"><span class="nav-dot dot-yellow"></span> Aeluma</div>
-    <div class="nav-item" onclick="showStock('AMKR',this)"><span class="nav-dot dot-yellow"></span> Amkor Tech</div>
   </div>
 
   <div class="nav-section">
-    <div class="nav-label">Watchlist AI/Tech</div>
-    <div class="nav-item" onclick="showStock('PLTR',this)"><span class="nav-dot dot-green"></span> Palantir <span class="badge badge-green">🎯</span></div>
-    <div class="nav-item" onclick="showStock('MU',this)"><span class="nav-dot dot-green"></span> Micron <span class="badge badge-green">🎯</span></div>
-    <div class="nav-item" onclick="showStock('TSLA',this)"><span class="nav-dot dot-green"></span> Tesla <span class="badge badge-green">🎯</span></div>
-    <div class="nav-item" onclick="showStock('AMD',this)"><span class="nav-dot dot-yellow"></span> AMD</div>
+    <div class="nav-label">Watchlist AI/Chip</div>
+    <div class="nav-item" onclick="showStock('PLTR',this)"><span class="nav-dot dot-green"></span> Palantir <span class="badge badge-red">$128</span></div>
+    <div class="nav-item" onclick="showStock('AVGO',this)"><span class="nav-dot dot-yellow"></span> Broadcom</div>
+    <div class="nav-item" onclick="showStock('ALAB',this)"><span class="nav-dot dot-yellow"></span> Astera Labs</div>
+    <div class="nav-item" onclick="showStock('AAOI',this)"><span class="nav-dot dot-yellow"></span> Applied Optoelec</div>
+    <div class="nav-item" onclick="showStock('CIEN',this)"><span class="nav-dot dot-yellow"></span> Ciena</div>
+    <div class="nav-item" onclick="showStock('COHR',this)"><span class="nav-dot dot-yellow"></span> Coherent</div>
+    <div class="nav-item" onclick="showStock('LITE',this)"><span class="nav-dot dot-yellow"></span> Lumentum</div>
+    <div class="nav-item" onclick="showStock('FN',this)"><span class="nav-dot dot-yellow"></span> Fabrinet</div>
     <div class="nav-item" onclick="showStock('NBIS',this)"><span class="nav-dot dot-yellow"></span> Nebius</div>
     <div class="nav-item" onclick="showStock('ASX',this)"><span class="nav-dot dot-yellow"></span> ASE Tech <span class="badge badge-blue">ordine</span></div>
-    <div class="nav-item" onclick="showStock('MRVL',this)"><span class="nav-dot dot-yellow"></span> Marvell <span class="badge badge-yellow">S&P500</span></div>
+    <div class="nav-item" onclick="showStock('GFS',this)"><span class="nav-dot dot-yellow"></span> GlobalFoundries</div>
+    <div class="nav-item" onclick="showStock('HIVE',this)"><span class="nav-dot dot-yellow"></span> Hive Digital</div>
+    <div class="nav-item" onclick="showStock('SNOW',this)"><span class="nav-dot dot-yellow"></span> Snowflake</div>
+    <div class="nav-item" onclick="showStock('SMCI',this)"><span class="nav-dot dot-yellow"></span> Super Micro</div>
+    <div class="nav-item" onclick="showStock('AXTI',this)"><span class="nav-dot dot-yellow"></span> AXT Inc</div>
+    <div class="nav-item" onclick="showStock('MU',this)"><span class="nav-dot dot-green"></span> Micron <span class="badge badge-blue">Balene</span></div>
+    <div class="nav-item" onclick="showStock('TSM',this)"><span class="nav-dot dot-green"></span> Taiwan Semi <span class="badge badge-blue">Balene</span></div>
   </div>
 
   <div class="nav-section">
     <div class="nav-label">Watchlist Space</div>
     <div class="nav-item" onclick="showStock('RKLB',this)"><span class="nav-dot dot-yellow"></span> Rocket Lab</div>
     <div class="nav-item" onclick="showStock('RDW',this)"><span class="nav-dot dot-yellow"></span> Redwire</div>
-    <div class="nav-item" onclick="showStock('ASTS_W',this)"><span class="nav-dot dot-yellow"></span> AST SpaceMobile</div>
+    <div class="nav-item" onclick="showStock('ASTS',this)"><span class="nav-dot dot-red"></span> AST SpaceMobile</div>
   </div>
 
   <div class="nav-section">
     <div class="nav-label">Watchlist Quantum</div>
-    <div class="nav-item" onclick="showStock('IONQ',this)"><span class="nav-dot dot-yellow"></span> IonQ</div>
-    <div class="nav-item" onclick="showStock('QBTS',this)"><span class="nav-dot dot-yellow"></span> D-Wave</div>
+    <div class="nav-item" onclick="showStock('IONQ',this)"><span class="nav-dot dot-green"></span> IonQ <span class="badge badge-green">🎯</span></div>
+    <div class="nav-item" onclick="showStock('QBTS',this)"><span class="nav-dot dot-green"></span> D-Wave <span class="badge badge-green">🎯</span></div>
+    <div class="nav-item" onclick="showStock('IBM',this)"><span class="nav-dot dot-yellow"></span> IBM <span class="badge badge-blue">$10B</span></div>
+    <div class="nav-item" onclick="showStock('RGTI',this)"><span class="nav-dot dot-yellow"></span> Rigetti</div>
     <div class="nav-item" onclick="showStock('QUTM',this)"><span class="nav-dot dot-blue"></span> VanEck Quantum ETF</div>
   </div>
 
   <div class="nav-section">
     <div class="nav-label">Pre-Index S&P500</div>
-    <div class="nav-item" onclick="showStock('SOFI',this)"><span class="nav-dot dot-green"></span> SoFi Tech <span class="badge badge-green">Set 26</span></div>
+    <div class="nav-item" onclick="showStock('SOFI',this)"><span class="nav-dot dot-green"></span> SoFi Tech <span class="badge badge-red">⚠️$15</span></div>
     <div class="nav-item" onclick="showStock('RDDT',this)"><span class="nav-dot dot-green"></span> Reddit <span class="badge badge-green">Set 26</span></div>
-    <div class="nav-item" onclick="showStock('MRVL_PI',this)"><span class="nav-dot dot-yellow"></span> Marvell <span class="badge badge-yellow">22 Giu</span></div>
+    <div class="nav-item" onclick="showStock('MRVL',this)"><span class="nav-dot dot-yellow"></span> Marvell <span class="badge badge-yellow">22 Giu</span></div>
   </div>
 </nav>
 
-<!-- MAIN -->
 <main id="main">
   <div class="topbar">
     <div class="topbar-title">IKinvest / <span id="topbar-section">Home</span></div>
     <div class="topbar-date" id="topbar-date"></div>
   </div>
 
-  <!-- HOME -->
   <div id="home-view">
     <div style="padding:20px 24px;">
       <div class="page-header">
         <div class="page-title">Dashboard Portafoglio</div>
-        <div class="page-sub">Aggiornato: 8 Giugno 2026</div>
+        <div class="page-sub">Aggiornato: 9 Giugno 2026</div>
       </div>
 
       <div class="home-grid">
         <div class="stat-card">
           <div class="stat-label">Valore Portafoglio</div>
-          <div class="stat-value neutral">€37.374</div>
-          <div class="stat-sub">Carico: €37.675</div>
+          <div class="stat-value neutral">~€37.200</div>
+          <div class="stat-sub">Carico: €37.675 (stima)</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">P&L Totale</div>
-          <div class="stat-value negative">-€300,70</div>
-          <div class="stat-sub">-0,80% dal carico</div>
+          <div class="stat-value negative">~-€475</div>
+          <div class="stat-sub">~-1,26% dal carico</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">P&L Oggi</div>
-          <div class="stat-value positive">+€99,60</div>
-          <div class="stat-sub">+0,27% · Nasdaq +1,45%</div>
+          <div class="stat-value negative">-€649,71</div>
+          <div class="stat-sub">-1,72% · Nasdaq -3,14%</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Liquidità</div>
-          <div class="stat-value neutral">€6.194</div>
+          <div class="stat-value neutral">€6.163</div>
           <div class="stat-sub">+€22.397 parcheggiati ETF</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Ordini Attivi</div>
-          <div class="stat-value neutral">2</div>
-          <div class="stat-sub">ASE Tech $32,50 · Nvidia $200</div>
+          <div class="stat-value neutral">1</div>
+          <div class="stat-sub">ASE Tech $32,50 × 25</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Prossimo Evento</div>
@@ -284,18 +248,18 @@
         <div class="alert-grid">
           <div class="alert-card red">
             <div class="stat-label" style="color:var(--red);">Fermi — Limite Mentale</div>
-            <div class="stat-value negative" style="font-size:16px;">$5,75</div>
+            <div class="stat-value negative" style="font-size:16px;">$5,70</div>
             <div class="stat-sub">Uscita immediata sotto $5,00</div>
           </div>
-          <div class="alert-card yellow">
-            <div class="stat-label" style="color:var(--yellow);">Intel — Pavimento</div>
-            <div class="stat-value yellow" style="font-size:16px;">$107,74</div>
-            <div class="stat-sub">Non incrementare sotto $100</div>
+          <div class="alert-card red">
+            <div class="stat-label" style="color:var(--red);">Intel — Pavimento Critico</div>
+            <div class="stat-value negative" style="font-size:16px;">$101,35</div>
+            <div class="stat-sub">Sotto $100 → vuoto fino a $80</div>
           </div>
-          <div class="alert-card green">
-            <div class="stat-label" style="color:var(--green);">Palantir — Target</div>
-            <div class="stat-value positive" style="font-size:16px;">$136</div>
-            <div class="stat-sub">Prima tranche $133-135 ← CI SIAMO</div>
+          <div class="alert-card red">
+            <div class="stat-label" style="color:var(--red);">SoFi — Quasi al Target</div>
+            <div class="stat-value negative" style="font-size:16px;">$15,87</div>
+            <div class="stat-sub">Prima tranche a $15,00 ← VICINO</div>
           </div>
         </div>
       </div>
@@ -304,18 +268,20 @@
         <div class="section-title">🗓️ Calendario</div>
         <div class="box" style="padding:0;">
           <div class="cal-item"><div class="cal-date" style="color:var(--red);">11 GIU</div><div class="cal-text">Pricing IPO SpaceX — ⚠️ ALTO IMPATTO</div></div>
-          <div class="cal-item"><div class="cal-date" style="color:var(--red);">12 GIU</div><div class="cal-text">IPO SpaceX (SPCX) @ $135 · Finestra ingressi 12-17 giugno</div></div>
-          <div class="cal-item"><div class="cal-date" style="color:var(--yellow);">16-17 GIU</div><div class="cal-text">Fed Meeting — Nuovo Chairman Warsh. Nessun taglio atteso (89%)</div></div>
+          <div class="cal-item"><div class="cal-date" style="color:var(--red);">12 GIU</div><div class="cal-text">IPO SpaceX (SPCX) su Nasdaq · Finestra ingressi 12-17 giugno</div></div>
+          <div class="cal-item"><div class="cal-date" style="color:var(--yellow);">16 GIU</div><div class="cal-text">Settlement T+2 SpaceX — istituzionali hanno liquidità libera</div></div>
+          <div class="cal-item"><div class="cal-date" style="color:var(--yellow);">16-17 GIU</div><div class="cal-text">Fed Meeting — Nessun taglio atteso (89%)</div></div>
           <div class="cal-item"><div class="cal-date" style="color:var(--yellow);">18 GIU</div><div class="cal-text">Qubits Europe 2026 — D-Wave a Londra</div></div>
-          <div class="cal-item"><div class="cal-date" style="color:var(--accent);">22 GIU</div><div class="cal-text">Inclusione Marvell in S&P500 — uscire prima!</div></div>
+          <div class="cal-item"><div class="cal-date" style="color:var(--accent);">22 GIU</div><div class="cal-text">Inclusione Marvell in S&P500 — USCIRE PRIMA!</div></div>
+          <div class="cal-item"><div class="cal-date" style="color:var(--accent);">18-25 GIU</div><div class="cal-text">Finestra ingresso SPCX — dopo FOMO iniziale</div></div>
           <div class="cal-item"><div class="cal-date">22 LUG</div><div class="cal-text">Earnings Intel (INTC)</div></div>
-          <div class="cal-item"><div class="cal-date">10 AGO</div><div class="cal-text">Earnings Palantir (PLTR)</div></div>
+          <div class="cal-item"><div class="cal-date">3 AGO</div><div class="cal-text">Earnings Palantir (PLTR)</div></div>
+          <div class="cal-item"><div class="cal-date">Set 2026</div><div class="cal-text">Rebalancing S&P500 — SoFi, Reddit, Alnylam candidati</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- STOCK VIEW -->
   <div id="stock-view"></div>
 </main>
 
@@ -323,28 +289,27 @@
 const stocks = {
   INTC: {
     ticker:'INTC', name:'Intel Corporation', exchange:'NASDAQ',
-    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'11 Azioni @ $104,72',cls:'pill-blue'},{text:'Ordini: nessuno',cls:'pill-gray'}],
-    desc:'Intel è il più grande produttore di microprocessori x86 al mondo. Nel 2026 è al centro di una forte rinascita grazie alla transizione verso l\'era agentic AI — con CPU Xeon 6+ per data center e Core Ultra Series 3 per on-device AI.',
+    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'11 az. @ $105,33',cls:'pill-blue'},{text:'Pavimento $100',cls:'pill-red'}],
+    desc:'Intel è al centro di una forte rinascita nel 2026 grazie alla transizione verso l\'era agentic AI. CPU Xeon 6+ per data center e Core Ultra Series 3 per on-device AI con oltre 325 design wins. Rally +500% YTD da $20 a $150, ora in correzione a $101.',
     eventi_passati:[
-      {data:'Gen 2026',testo:'Da $36,90 → rally +200% in 5 mesi'},
+      {data:'Gen 2026',testo:'Da $20 → rally +650% in 12 mesi — straordinario'},
       {data:'Apr 2026',testo:'Q1 beat: guidance Q2 $13,8-14,8B vs consensus $13,07B'},
       {data:'Mag 2026',testo:'Computex: Xeon 6+ per agentic AI, Core Ultra Series 3'},
-      {data:'Giu 2026',testo:'Correzione da $116 → $99 su selloff Broadcom'},
+      {data:'9 Giu 2026',testo:'Correzione a $101 (-13% da $116) — pavimento $100 sotto pressione'},
     ],
     eventi_futuri:[
       {data:'22 Lug 2026',testo:'Earnings Q2 2026 — catalyst importante'},
       {data:'2026',testo:'Espansione fab Ohio e Arizona — CHIPS Act grants'},
-      {data:'2026',testo:'Vera Rubin partnership TSMC 3N process'},
     ],
     grafici:[
-      {file:'chart_INTC_1anno.png',titolo:'1 Anno (Settimanale)',data:'5 Giu 2026',note:'Da $19 a $116 in 10 mesi (+500%). Trend strutturale. Media mobile inclinata. Rally da CPU comeback nell\'era AI.'},
-      {file:'chart_INTC_3mesi.png',titolo:'3 Mesi (Giornaliero)',data:'5 Giu 2026',note:'Correzione da $116→$99. Range $100-116. Pavimento critico $100 — sotto vuoto fino a $80. RSI 4h ~32 quasi ipervenduto.'},
+      {file:'chart_INTC_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $20 a $150 in 12 mesi (+650%). MM settimanale a $72,10 — prezzo ben sopra. RSI 64,9 — neutro. A/D Line in salita costante.'},
+      {file:'chart_INTC_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $116 a $101 (-13%). MM giornaliera $113,76 — prezzo sotto. RSI 46,4 — debole. Pavimento critico $100 — sotto vuoto fino a $80.'},
     ],
-    analisi:'Tesi solida: CPU comeback nell\'era agentic AI. Rapporto GPU/CPU si ribalta — training 8:1, inference 3-4:1, agentic AI potenzialmente 1:1. Xeon 6+ per data center, Core Ultra per on-device. 325+ design wins. Il mercato ha già corso (+500% YTD) ma la tesi è strutturale.',
+    analisi:'Tesi solida: CPU comeback nell\'era agentic AI. Rapporto GPU/CPU si ribalta — agentic AI potenzialmente CPU dominante. Xeon 6+ per data center, Core Ultra per on-device. 325+ design wins. Il pavimento $100 è tecnico e psicologico — tenere d\'occhio.',
     livelli:[
       {label:'Pavimento Critico',value:'$100,00',cls:'negative'},
-      {label:'Range Consolidamento',value:'$100 – $116',cls:'neutral'},
-      {label:'Stop Mentale',value:'Sotto $100',cls:'negative'},
+      {label:'MM Giornaliera',value:'$113,76 — resistenza',cls:'negative'},
+      {label:'Stop Mentale Portafoglio',value:'Sotto $85',cls:'negative'},
       {label:'Target Medio Termine',value:'$130 – $150',cls:'positive'},
       {label:'Earnings',value:'22 Luglio 2026',cls:'neutral'},
     ],
@@ -353,267 +318,641 @@ const stocks = {
   },
   NVDA: {
     ticker:'NVDA', name:'NVIDIA Corporation', exchange:'NASDAQ',
-    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'7 az. @ $219,86',cls:'pill-blue'},{text:'Ordine ×2 @ $200',cls:'pill-yellow'}],
-    desc:'NVIDIA è il leader assoluto nei chip per AI. Le GPU Blackwell dominano training e inference AI. Vera Rubin in produzione Q3 2026, RTX Spark per AI PC. Target consensus analisti $296 (+44%).',
+    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'9 az. @ ~$215',cls:'pill-blue'},{text:'Ordine $200 ESEGUITO',cls:'pill-green'}],
+    desc:'NVIDIA è il leader assoluto nei chip per AI. Le GPU Blackwell dominano training e inference AI. Vera Rubin in produzione Q3 2026, RTX Spark per AI PC. Target consensus analisti $296 (+44%). Ordine × 2 @ $200 eseguito il 9 giugno.',
     eventi_passati:[
-      {data:'Mag 2026',testo:'Earnings Q1 FY27 record: $44,1B ricavi, EPS $0,96 vs $0,89 attese'},
+      {data:'Mag 2026',testo:'Earnings Q1 FY27 record: $44,1B ricavi, EPS $0,96 vs $0,89'},
       {data:'Giu 2026',testo:'Computex: Vera Rubin in produzione, RTX Spark annunciato'},
-      {data:'Giu 2026',testo:'Selloff -6% su audizione Senato chip cinesi + pressione Fed'},
-      {data:'Giu 2026',testo:'Trump-Xi: USA permette H200 a 10 aziende cinesi'},
+      {data:'9 Giu 2026',testo:'Selloff a $200 — ordine eseguito. Posizione totale: 9 azioni'},
     ],
     eventi_futuri:[
       {data:'Ago 2026',testo:'Earnings Q2 FY2027'},
       {data:'Q3 2026',testo:'Consegne Vera Rubin a OpenAI, Anthropic, xAI, Oracle'},
-      {data:'Aut 2026',testo:'Lancio RTX Spark: 30+ laptop AI PC'},
     ],
     grafici:[],
-    analisi:'58 analisti Buy, target $296. Blackwell in rampa, Vera Rubin in produzione. RTX Spark entra mercato AI PC. Il calo attuale è pressione esterna (Senato, Fed) non fondamentale. Jensen Huang ha definito il calo un "mistero" dati i fondamentali eccezionali.',
+    analisi:'58 analisti Buy, target consensus $296. Blackwell in rampa, Vera Rubin in produzione. Il calo a $200 era il livello pianificato — ordine eseguito correttamente. Tesi intatta.',
     livelli:[
-      {label:'Posizione',value:'7 az. @ $219,86',cls:'neutral'},
-      {label:'Ordine Attivo',value:'×2 @ $200,00',cls:'yellow'},
-      {label:'Supporto Psicologico',value:'$200',cls:'negative'},
+      {label:'Posizione',value:'9 az. — carico medio ~$215',cls:'neutral'},
+      {label:'Supporto Tenuto',value:'$200 ✅ — ordine eseguito',cls:'positive'},
       {label:'Stop Mentale',value:'Sotto $185',cls:'negative'},
       {label:'Target Consensus',value:'$296 (+44%)',cls:'positive'},
     ],
     tv_symbol:'NASDAQ:NVDA',
     news_url:'https://finance.yahoo.com/quote/NVDA/news/',
   },
-  PLTR: {
-    ticker:'PLTR', name:'Palantir Technologies', exchange:'NASDAQ',
-    badges:[{text:'Priorità Alta',cls:'pill-green'},{text:'Target Raggiunto $133-135',cls:'pill-yellow'},{text:'Finestra 12-17 Giu',cls:'pill-blue'}],
-    desc:'Palantir è una società di software AI e analytics. Fornisce piattaforme AI (AIP) a governi e aziende. Nel 2026 ha raggiunto la crescita più alta dalla quotazione, con ricavi US +104% YoY e Rule of 40 score a 145%.',
+  TSM: {
+    ticker:'TSM', name:'Taiwan Semiconductor ADR', exchange:'NYSE',
+    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'2 az. @ $424',cls:'pill-blue'},{text:'Watchlist Balene',cls:'pill-blue'}],
+    desc:'TSMC è il più grande foundry al mondo con quota 72,3% nel leading-edge. Clienti: Nvidia, Apple, AMD, Intel. Espansione fab Arizona. Ricavi +29,9% YoY. Spostata in Watchlist Balene per dimensione investimento.',
     eventi_passati:[
-      {data:'Mag 2026',testo:'Q1 2026 record: $1,63B ricavi (+85% YoY), EPS $0,33 vs $0,28'},
-      {data:'Q1 2026',testo:'US Revenue +104% YoY — 79% del totale'},
-      {data:'2026',testo:'Rule of 40: 145% — solo Nvidia, Micron e SK Hynix uguale'},
-      {data:'Gen-Feb',testo:'Correzione da $200 a $120 (-40%) nonostante fondamentali eccezionali'},
+      {data:'2026',testo:'Ricavi gen-apr: +29,9% YoY a $49,16B'},
+      {data:'2026',testo:'Fab Arizona in costruzione — supply chain USA'},
     ],
     eventi_futuri:[
-      {data:'10 Ago 2026',testo:'Earnings Q2 2026'},
+      {data:'2026',testo:'Espansione produzione N2/N3 per AI chips'},
+    ],
+    grafici:[],
+    analisi:'Fornitore critico per tutta la supply chain AI. Posizione in portafoglio da mantenere. Per incrementi significativi considerare sizing da Balene (€3.000+).',
+    livelli:[
+      {label:'Posizione',value:'2 az. @ $424,40',cls:'neutral'},
+      {label:'Stop Mentale',value:'Sotto $380',cls:'negative'},
+      {label:'Target Lungo',value:'$480 – $520',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:TSM',
+    news_url:'https://finance.yahoo.com/quote/TSM/news/',
+  },
+  AMKR: {
+    ticker:'AMKR', name:'Amkor Technology', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'12 az. @ $71,79',cls:'pill-blue'},{text:'+5,3% oggi',cls:'pill-green'}],
+    desc:'Amkor è il secondo provider mondiale di packaging e testing semiconduttori. Il segmento advanced packaging (LEAP/HBM) è il driver principale della crescita AI. Q1 2026 record: $1,68B ricavi (+27% YoY). Ancora underpriced a 2,35x forward revenue.',
+    eventi_passati:[
+      {data:'Q1 2026',testo:'Record $1,68B ricavi (+27% YoY), EBITDA $285M'},
+      {data:'2026',testo:'Target Q2: $1,75-1,85B (sopra consensus) — guidance forte'},
+      {data:'9 Giu 2026',testo:'+5,3% oggi — titolo regge bene nel selloff generale'},
+    ],
+    eventi_futuri:[
+      {data:'2026',testo:'Espansione $7B in Arizona e Corea'},
+      {data:'2H 2026',testo:'Advanced packaging margins in salita'},
+    ],
+    grafici:[
+      {file:'chart_AMKR_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Trend strutturale fortissimo da $10 a $79 in 2 anni. MM settimanale a $57,81 — prezzo ben sopra. RSI 63,8 — neutro/rialzista. A/D Line in salita costante — accumulo istituzionale confermato.'},
+      {file:'chart_AMKR_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Trend rialzista da $40 ad aprile a $79 maggio. Correzione a $65 poi rimbalzo a $72. MM giornaliera $70,48 — prezzo sopra. RSI 52,9 — neutro con spazio.'},
+    ],
+    analisi:'Fondamentali eccellenti: record Q1 2026, guidance Q2 sopra consensus, advanced packaging AI in forte crescita. Trading a 2,35x forward revenue — ancora cheap rispetto alla crescita. Posizione da tenere con convinzione.',
+    livelli:[
+      {label:'Posizione',value:'12 az. @ $71,79',cls:'neutral'},
+      {label:'Stop Mentale',value:'Sotto $58 (MM settimanale)',cls:'negative'},
+      {label:'Target',value:'$85 – $90',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:AMKR',
+    news_url:'https://finance.yahoo.com/quote/AMKR/news/',
+  },
+  ZS: {
+    ticker:'ZS', name:'Zscaler', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-red'},{text:'4 az. @ $134,80',cls:'pill-red'},{text:'Stop $120',cls:'pill-red'}],
+    desc:'Zscaler è una piattaforma di cybersecurity cloud. In portafoglio con 4 azioni dopo ordine involontario del 5 giugno. Fondamentali deteriorati: -30% post earnings maggio, guidance tagliata, leadership vendite uscita.',
+    eventi_passati:[
+      {data:'Mag 2026',testo:'-30% post earnings — guidance tagliata'},
+      {data:'5 Giu 2026',testo:'Ordine eseguito involontariamente (popup browser bloccato)'},
+      {data:'9 Giu 2026',testo:'A $127,44 — P&L -€26'},
+    ],
+    eventi_futuri:[
+      {data:'Post 12 Giu',testo:'Rivalutare posizione dopo IPO SpaceX'},
+    ],
+    grafici:[],
+    analisi:'Posizione involontaria con fondamentali deteriorati. Nessun incremento pianificato. Stop mentale sotto $120. Tenere per ora e rivalutare nel contesto post-IPO.',
+    livelli:[
+      {label:'Posizione',value:'4 az. @ $134,80',cls:'negative'},
+      {label:'Stop Mentale',value:'Sotto $120',cls:'negative'},
+      {label:'Decisione',value:'No incremento',cls:'negative'},
+    ],
+    tv_symbol:'NASDAQ:ZS',
+    news_url:'https://finance.yahoo.com/quote/ZS/news/',
+  },
+  FRMI: {
+    ticker:'FRMI', name:'Fermi Energy Corp.', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-red'},{text:'147 az. @ $6,35',cls:'pill-red'},{text:'⚠️ LIMITE $5',cls:'pill-red'}],
+    desc:'Fermi Energy è focalizzata su Project Matador. IPO a $21 nel 2025, crollo -80% per rescissione deal principale, class action pendente e CEO dimissionario. Zero ricavi. Limite mentale $5 invariato.',
+    eventi_passati:[
+      {data:'Ott 2025',testo:'IPO a $21'},
+      {data:'Dic 2025',testo:'Rescissione accordo $150M — crollo -34%'},
+      {data:'2026',testo:'Class action frode — CEO dimissionario'},
+    ],
+    eventi_futuri:[
+      {data:'Post 12 Giu',testo:'Rivalutazione dopo IPO SpaceX'},
+    ],
+    grafici:[
+      {file:'chart_FRMI_giornaliero.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Downtrend strutturale da $21 a $5,70. Zero segnali di inversione. Stop mentale $5,00 invariato.'},
+    ],
+    analisi:'POSIZIONE RISCHIOSA. Zero ricavi, CEO dimissionario, class action. Il limite $5 va rispettato SENZA ESITAZIONI. Nessuna azione fino a post-12 giugno.',
+    livelli:[
+      {label:'LIMITE MENTALE',value:'$5,00 → USCITA IMMEDIATA',cls:'negative'},
+      {label:'Posizione',value:'147 az. @ $6,35',cls:'negative'},
+      {label:'P&L',value:'~-€75',cls:'negative'},
+    ],
+    tv_symbol:'NASDAQ:FRMI',
+    news_url:'https://finance.yahoo.com/quote/FRMI/news/',
+  },
+  ASTS: {
+    ticker:'ASTS', name:'AST SpaceMobile', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-red'},{text:'6 az. @ $110,95',cls:'pill-red'},{text:'Post-IPO catalyst',cls:'pill-blue'}],
+    desc:'AST SpaceMobile costruisce una rete satellitare broadband per connettività globale diretta agli smartphone. Cassa $3,5B, guidance $150-200M FY2026. Catalyst: lancio BlueBird 8-9-10 a metà giugno. Insider tengono le quote.',
+    eventi_passati:[
+      {data:'2026',testo:'Cassa $3,5B raccolta — runway solido'},
+      {data:'Giu 2026',testo:'Dumping pre-SpaceX da $110 a $85 — in portafoglio in perdita'},
+      {data:'9 Giu 2026',testo:'Rimbalzo a $98 (+7%) — titolo reagisce'},
+    ],
+    eventi_futuri:[
+      {data:'Mid Giu 2026',testo:'Lancio BlueBird 8-9-10 su Falcon 9 — catalyst concreto'},
+      {data:'Post 12 Giu',testo:'Fine dumping pre-SpaceX — potenziale rimbalzo'},
+    ],
+    grafici:[
+      {file:'chart_ASTS_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Trend rialzista da $40 a $100. MM settimanale $77,31 — prezzo sopra. RSI 55,9 — neutro. Insider tengono quote — segnale positivo.'},
+      {file:'chart_ASTS_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $100 a $85, rimbalzo a $98. MM giornaliera $86,25 — prezzo sopra. RSI 50,9 — neutro.'},
+    ],
+    analisi:'Posizione in perdita strutturale (-11%) ma con catalyst reale (lancio satelliti). Non incrementare pre-IPO SpaceX. Aspettare post-12 giugno per rivalutare. Target ritorno ai massimi $110-120.',
+    livelli:[
+      {label:'Posizione',value:'6 az. @ $110,95',cls:'negative'},
+      {label:'Stop Mentale',value:'Sotto $75',cls:'negative'},
+      {label:'Target Post-Catalyst',value:'$110 – $120',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:ASTS',
+    news_url:'https://finance.yahoo.com/quote/ASTS/news/',
+  },
+  ALMU: {
+    ticker:'ALMU', name:'Aeluma Inc.', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-yellow'},{text:'13 az. @ $24,06',cls:'pill-blue'},{text:'Earnings Set 26',cls:'pill-gray'}],
+    desc:'Aeluma produce sensori fotonica e LiDAR per difesa e aerospace. Guidance tagliata a $4,2-4,6M per shutdown governativo. Posizione piccola — tenere fino agli earnings.',
+    eventi_passati:[
+      {data:'2026',testo:'Guidance tagliata — shutdown governativo ritarda contratti'},
+    ],
+    eventi_futuri:[
+      {data:'29 Set 2026',testo:'Earnings — prossimo catalyst'},
+    ],
+    grafici:[
+      {file:'chart_ALMU_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Laterale $10-25. Spike aprile a $30 poi ritracciamento. MM settimanale $17,76. RSI 57,4 — neutro.'},
+    ],
+    analisi:'Posizione piccola quasi in pari. Guidance tagliata ma settore difesa/aerospace interessante a lungo termine. Tenere fino agli earnings di settembre.',
+    livelli:[
+      {label:'Posizione',value:'13 az. @ $24,06',cls:'neutral'},
+      {label:'Stop Mentale',value:'Sotto $18 (MM settimanale)',cls:'negative'},
+      {label:'Earnings',value:'29 Settembre 2026',cls:'neutral'},
+    ],
+    tv_symbol:'NASDAQ:ALMU',
+    news_url:'https://finance.yahoo.com/quote/ALMU/news/',
+  },
+  PLTR: {
+    ticker:'PLTR', name:'Palantir Technologies', exchange:'NASDAQ',
+    badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'2 az. @ $123,47',cls:'pill-blue'},{text:'Seconda Tranche $124-125',cls:'pill-yellow'}],
+    desc:'Palantir è la società AI con i fondamentali più solidi della lista. Rule of 40 a 145%, ricavi US +104% YoY, cassa $8B, zero debito. Il calo riflette solo repricing da risk-off — non i numeri. Seconda tranche in avvicinamento.',
+    eventi_passati:[
+      {data:'Mag 2026',testo:'Q1 record: $1,63B ricavi (+85% YoY), Rule of 40 a 145%'},
+      {data:'Giu 2026',testo:'Guidance FY2026: $7,65B (+71%) — la più grande revisione nella storia'},
+      {data:'9 Giu 2026',testo:'A $128,50 — seconda tranche $124-125 si avvicina'},
+    ],
+    eventi_futuri:[
+      {data:'3 Ago 2026',testo:'Earnings Q2 2026'},
       {data:'FY2026',testo:'Guidance: $7,65B (+71% YoY)'},
     ],
     grafici:[
-      {file:'chart_PLTR_6mesi.png',titolo:'6 Mesi (Giornaliero)',data:'5 Giu 2026',note:'Downtrend $200→$120 (-40%). Rimbalzo a $155. Ritracciamento a $133. Zona volumetrica $133-135. Media mobile in discesa. RSI ~46. CI SIAMO AL LIVELLO TARGET.'},
+      {file:'chart_PLTR_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $60 a $207 poi downtrend a $128. MM settimanale $141,33 — prezzo sotto e MM in discesa. RSI 42,6 — debole. A/D Line in calo.'},
+      {file:'chart_PLTR_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Downtrend da $160 a $128. MM giornaliera $139,09 — prezzo sotto. RSI 39,8 — quasi ipervenduto. Volume alto oggi. Seconda tranche $124-125 in avvicinamento.'},
     ],
-    analisi:'Fondamentali tra i migliori del mercato. Cassa $8B, zero debito. Il calo riflette valutazione elevata reprezzata con risk-off, non i numeri. Zona volumetrica $133-135 è supporto reale e livello di ingresso pianificato.',
+    analisi:'Fondamentali eccezionali — Rule of 40 a 145% raggiunto solo da Nvidia al mondo. Il downtrend tecnico riflette solo la valutazione compressa dal risk-off, non i numeri. Seconda tranche $124-125 è il livello pianificato da settimane.',
     livelli:[
-      {label:'Prima Tranche',value:'$133 – $135',cls:'positive'},
-      {label:'Seconda Tranche',value:'$124 – $125',cls:'positive'},
+      {label:'Prima Tranche',value:'2 az. @ $123,47 ✅',cls:'positive'},
+      {label:'Seconda Tranche',value:'$124 – $125 ← IN AVVICINAMENTO',cls:'positive'},
       {label:'Stop Mentale',value:'Sotto $120',cls:'negative'},
       {label:'Target',value:'$160 – $170',cls:'positive'},
-      {label:'Earnings',value:'10 Agosto 2026',cls:'neutral'},
+      {label:'Earnings',value:'3 Agosto 2026',cls:'neutral'},
     ],
     tv_symbol:'NASDAQ:PLTR',
     news_url:'https://finance.yahoo.com/quote/PLTR/news/',
   },
-  MU: {
-    ticker:'MU', name:'Micron Technology', exchange:'NASDAQ',
-    badges:[{text:'Priorità Alta',cls:'pill-green'},{text:'Target $820-850',cls:'pill-yellow'},{text:'Finestra 12-17 Giu',cls:'pill-blue'}],
-    desc:'Micron è il terzo produttore mondiale di chip di memoria. Fornitore critico di HBM (High Bandwidth Memory) per GPU Nvidia. Nel 2026 registra crescita record trainata dalla domanda AI.',
+  AVGO: {
+    ticker:'AVGO', name:'Broadcom Inc.', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $355-370',cls:'pill-blue'},{text:'Post-Earnings Correction',cls:'pill-gray'}],
+    desc:'Broadcom è il catalyst del selloff della settimana. Earnings Q2 FY2026 deludenti hanno scatenato un -15% che si è propagato a tutti i chip stocks. Nonostante il miss, rimane leader AI chips con custom silicon per Google, Meta, Apple.',
     eventi_passati:[
-      {data:'Mar 2026',testo:'Q2 FY26 record: $23,86B (+196% YoY), EPS $12,20 vs $9,31'},
-      {data:'Mar 2026',testo:'Dividendo +30%, FCF record $6,9B'},
-      {data:'Giu 2026',testo:'Correzione -9% su selloff Broadcom — fisiologica'},
-      {data:'2026',testo:'HBM4 in produzione — fornitore chiave Nvidia Blackwell/Vera Rubin'},
+      {data:'5 Giu 2026',testo:'Earnings Q2 FY26 miss — selloff -15% su tutto il settore'},
+      {data:'9 Giu 2026',testo:'A $382 (-24% dai massimi $500)'},
     ],
     eventi_futuri:[
-      {data:'Giu 2026',testo:'Guidance Q3 FY26: $33,5B ricavi, EPS $19,15'},
-      {data:'2026',testo:'Espansione HBM per AI data center'},
+      {data:'Post 12 Giu',testo:'Potenziale rimbalzo con fine dumping pre-SpaceX'},
     ],
     grafici:[
-      {file:'chart_MU_1anno.png',titolo:'1 Anno (Giornaliero)',data:'5 Giu 2026',note:'Rally da $200 a $1.000 in 6 mesi. Trend fortissimo. Correzione -9% fisiologica. Media mobile $851-860. RSI ~59. Zona volumetrica $800-850.'},
+      {file:'chart_AVGO_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $150 a $500 poi correzione a $382. MM settimanale $365,91 — prezzo sopra ma in avvicinamento. RSI 52,8 — neutro. Volume enorme venerdì 5 giugno.'},
+      {file:'chart_AVGO_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $500 a $382 (-24%) in 5 giorni. MM giornaliera $425 — prezzo sotto. RSI 40,1 — quasi ipervenduto.'},
     ],
-    analisi:'Fondamentali record. Memoria AI è asset strategico critico. HBM è collo di bottiglia per tutta la filiera AI. Net cash $6,5B. Crescita +200% YoY sostenuta da domanda strutturale. Il calo di oggi è rumore.',
+    analisi:'Nonostante il miss earnings, i fondamentali strutturali rimangono solidi. Custom silicon AI per hyperscalers è business difendibile. La correzione -24% crea un\'opportunità se tiene la MM settimanale a $365.',
     livelli:[
-      {label:'Ingresso Target',value:'$820 – $850',cls:'positive'},
-      {label:'Media Mobile',value:'~$851 – $860',cls:'neutral'},
-      {label:'Stop Mentale',value:'Sotto $780',cls:'negative'},
-      {label:'Target',value:'$1.000 – $1.100',cls:'positive'},
-      {label:'Guidance Q3',value:'$33,5B · EPS $19,15',cls:'positive'},
+      {label:'Ingresso Target',value:'$355 – $370',cls:'positive'},
+      {label:'MM Settimanale',value:'$365,91 — supporto chiave',cls:'neutral'},
+      {label:'Stop',value:'Sotto $340',cls:'negative'},
+      {label:'Target',value:'$430 – $460',cls:'positive'},
     ],
-    tv_symbol:'NASDAQ:MU',
-    news_url:'https://finance.yahoo.com/quote/MU/news/',
+    tv_symbol:'NASDAQ:AVGO',
+    news_url:'https://finance.yahoo.com/quote/AVGO/news/',
   },
-  TSLA: {
-    ticker:'TSLA', name:'Tesla Inc.', exchange:'NASDAQ',
-    badges:[{text:'Priorità Alta',cls:'pill-green'},{text:'Target $360-370',cls:'pill-yellow'},{text:'Mispricing Strutturale',cls:'pill-blue'}],
-    desc:'Tesla non è più solo auto — è un ecosistema tecnologico integrato: Robotaxi (Cybercab), robot umanoidi (Optimus), chip proprietari (Terafab), AI (xAI/Grok) e potenziale fusione con SpaceX.',
+  ALAB: {
+    ticker:'ALAB', name:'Astera Labs', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $280-300',cls:'pill-blue'},{text:'Molto Volatile',cls:'pill-gray'}],
+    desc:'Astera Labs produce connectivity semiconductors per AI data center. Clienti: hyperscalers Amazon, Google, Microsoft. Pure play AI infrastructure — oscillazioni di $50-80 in pochi giorni sono normali.',
     eventi_passati:[
-      {data:'Q1 2026',testo:'Ricavi $22,4B (+16% YoY), margine lordo 21,1%, FCF $1,44B'},
-      {data:'2026',testo:'FSD approvato in Olanda — apre strada all\'intera UE'},
-      {data:'2026',testo:'Capex alzato a $25B'},
-      {data:'2026',testo:'Speculazione fusione Tesla-SpaceX — Musk ne ha discusso internamente'},
+      {data:'2026',testo:'Da $20 IPO a $420 in 12 mesi — rally straordinario'},
+      {data:'9 Giu 2026',testo:'Correzione a $339 (-19% dai massimi $420)'},
     ],
     eventi_futuri:[
-      {data:'2026',testo:'Lancio Cybercab — robotaxi in produzione'},
-      {data:'21 Lug 2026',testo:'Earnings Q2 2026'},
-      {data:'2026-27',testo:'Terafab: produzione chip AI proprietari'},
+      {data:'12-17 Giu',testo:'Potenziale ingresso se scende al target'},
     ],
     grafici:[
-      {file:'chart_TSLA_6mesi.png',titolo:'6 Mesi (Giornaliero)',data:'5 Giu 2026',note:'Downtrend $500→$340. Rimbalzo apr a $460. Correzione a $390. Media mobile $420-425 resistenza. RSI ~40 quasi ipervenduto. Supporto $385-390, poi $360-370.'},
+      {file:'chart_ALAB_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $20 a $420 in 12 mesi. MM settimanale $188 — prezzo ben sopra. RSI 74,4 — ipercomprato su settimanale.'},
+      {file:'chart_ALAB_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $420 a $339. MM giornaliera $298,85 — prezzo sopra. RSI 62,9 — neutro.'},
     ],
-    analisi:'Mispricing strutturale — analisti ancora la valutano come fabbrica auto. Tesla compete con Nvidia, Boston Dynamics, SpaceX e Uber contemporaneamente. Re-rating atteso quando robotaxi e Optimus scaleranno. Fusione SpaceX sarebbe catalyst esplosivo.',
+    analisi:'Titolo molto volatile — non adatto a posizioni grandi. La correzione attuale è fisiologica su un trend strutturale fortissimo. Ingresso solo in zona MM giornaliera a $280-300.',
     livelli:[
-      {label:'Ingresso Target',value:'$360 – $370',cls:'positive'},
-      {label:'Supporto Attuale',value:'$385 – $390',cls:'neutral'},
-      {label:'Stop Mentale',value:'Sotto $340',cls:'negative'},
-      {label:'Target',value:'$450 – $480',cls:'positive'},
-      {label:'Earnings',value:'21 Luglio 2026',cls:'neutral'},
+      {label:'Ingresso Target',value:'$280 – $300',cls:'positive'},
+      {label:'Stop',value:'Sotto $260',cls:'negative'},
+      {label:'Target',value:'$380 – $420',cls:'positive'},
     ],
-    tv_symbol:'NASDAQ:TSLA',
-    news_url:'https://finance.yahoo.com/quote/TSLA/news/',
+    tv_symbol:'NASDAQ:ALAB',
+    news_url:'https://finance.yahoo.com/quote/ALAB/news/',
   },
-  AMD: {
-    ticker:'AMD', name:'Advanced Micro Devices', exchange:'NASDAQ',
-    badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Target $420-430',cls:'pill-blue'}],
-    desc:'AMD produce CPU e GPU per PC, server e AI. Le GPU MI300 sono in forte domanda per AI. CPU EPYC guadagna quota nei data center. Competitor diretto di Nvidia e Intel.',
+  AAOI: {
+    ticker:'AAOI', name:'Applied Optoelectronics', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $150-160',cls:'pill-blue'},{text:'800G boom',cls:'pill-gray'}],
+    desc:'Applied Optoelectronics produce componenti ottici 800G per data center AI. Rally da $15 a $210 (+1300%) in 12 mesi guidato dall\'esplosione della domanda di fibra per AI. Ora in correzione a $178.',
     eventi_passati:[
-      {data:'Mar-Mag 2026',testo:'Rally +165% da $200 a $530'},
-      {data:'Giu 2026',testo:'Correzione -12% su selloff Broadcom'},
+      {data:'2026',testo:'Da $15 a $210 (+1300%) — rally parabolico'},
+      {data:'9 Giu 2026',testo:'Correzione a $178 (-15%) — RSI settim. 68,2'},
     ],
     eventi_futuri:[
-      {data:'Finestra 12-17 Giu',testo:'Potenziale ingresso se scende a target'},
-      {data:'2026',testo:'Nuovi GPU MI400 per AI data center'},
+      {data:'12-17 Giu',testo:'Target $150-160 se continua la correzione'},
     ],
     grafici:[
-      {file:'chart_AMD_1anno.png',titolo:'1 Anno (Giornaliero)',data:'5 Giu 2026',note:'Rally esplosivo da $200 a $530. Correzione in corso. Media mobile in avvicinamento $420-430. RSI ~55 in calo. Zona volumetrica $400-450.'},
+      {file:'chart_AAOI_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $15 a $210 in 12 mesi. MM settimanale $122 — prezzo sopra. RSI 68,2 — quasi ipercomprato. A/D Line in forte salita.'},
+      {file:'chart_AAOI_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $210 a $178 (-15%). MM giornaliera $184 — prezzo sotto. RSI 50,5 — neutro in calo.'},
     ],
-    analisi:'Rally +165% da marzo, correzione fisiologica in corso. GPU MI300 in forte domanda per AI. CPU EPYC guadagna quota data center. Il livello $420-430 è dove converge la media mobile — ingresso pulito.',
+    analisi:'Beneficiario diretto dell\'esplosione della bandwidth per AI. RSI settimanale quasi ipercomprato — potrebbe scendere ancora. Target $150-160 coincide con la MM settimanale in avvicinamento.',
     livelli:[
-      {label:'Ingresso Target',value:'$420 – $430',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $390',cls:'negative'},
+      {label:'Ingresso Target',value:'$150 – $160',cls:'positive'},
+      {label:'Stop',value:'Sotto $130',cls:'negative'},
+      {label:'Target',value:'$200 – $220',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:AAOI',
+    news_url:'https://finance.yahoo.com/quote/AAOI/news/',
+  },
+  CIEN: {
+    ticker:'CIEN', name:'Ciena Corporation', exchange:'NYSE',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $420-440',cls:'pill-green'},{text:'Correzione -27%',cls:'pill-red'}],
+    desc:'Ciena è il leader mondiale in networking ottico per data center e telecomunicazioni. Beneficiario diretto dell\'esplosione della bandwidth per AI. Trend strutturale fortissimo — la correzione -27% crea un\'opportunità su fondamentali solidi.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $50 a $600 in 2 anni — trend straordinario'},
+      {data:'9 Giu 2026',testo:'Correzione da $600 a $438 (-27%) — su selloff generale'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $420-440 — finestra ingresso'},
+    ],
+    grafici:[
+      {file:'chart_CIEN_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $50 a $600 in 2 anni — trend fortissimo. MM settimanale $558,69 — prezzo sotto dopo correzione. RSI 53,3 — neutro.'},
+      {file:'chart_CIEN_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione pesante da $600 a $438 (-27%). MM giornaliera $558 — prezzo ben sotto. RSI 34,8 — quasi ipervenduto. Zona volumetrica densa $420-500.'},
+    ],
+    analisi:'Correzione -27% su fondamentali solidi = opportunità. Il livello $420-440 coincide con la zona volumetrica densa. RSI quasi ipervenduto su giornaliero — potenziale rimbalzo tecnico.',
+    livelli:[
+      {label:'Ingresso Target',value:'$420 – $440 ← SIAMO QUI',cls:'positive'},
+      {label:'Stop',value:'Sotto $400',cls:'negative'},
       {label:'Target',value:'$500 – $520',cls:'positive'},
-      {label:'Media Mobile',value:'~$420 – $430',cls:'neutral'},
     ],
-    tv_symbol:'NASDAQ:AMD',
-    news_url:'https://finance.yahoo.com/quote/AMD/news/',
+    tv_symbol:'NYSE:CIEN',
+    news_url:'https://finance.yahoo.com/quote/CIEN/news/',
+  },
+  COHR: {
+    ticker:'COHR', name:'Coherent Corp.', exchange:'NYSE',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $320-340',cls:'pill-blue'},{text:'Ottical AI Chain',cls:'pill-gray'}],
+    desc:'Coherent produce componenti ottici e laser per data center AI. Stesso ecosistema di Ciena, Fabrinet, AAOI. Trend strutturale da $20 a $420 in 2 anni — correzione -15% fisiologica.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $20 a $420 in 2 anni — trend straordinario'},
+      {data:'9 Giu 2026',testo:'Correzione a $356 (-15%) — selloff generale'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $320-340 — MM settimanale'},
+    ],
+    grafici:[
+      {file:'chart_COHR_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $20 a $420 — trend costante. MM settimanale $295,30 — prezzo sopra. RSI 68,6 — quasi ipercomprato. A/D Line in salita costante.'},
+      {file:'chart_COHR_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $420 a $356 (-15%). MM giornaliera $382,98 — prezzo sotto. RSI 47,1 — neutro in calo.'},
+    ],
+    analisi:'Trend strutturale fortissimo, correzione fisiologica. Il livello $320-340 è sulla MM settimanale — ottimo punto di ingresso su pullback.',
+    livelli:[
+      {label:'Ingresso Target',value:'$320 – $340',cls:'positive'},
+      {label:'MM Settimanale',value:'$295,30 — supporto chiave',cls:'neutral'},
+      {label:'Stop',value:'Sotto $290',cls:'negative'},
+      {label:'Target',value:'$390 – $420',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:COHR',
+    news_url:'https://finance.yahoo.com/quote/COHR/news/',
+  },
+  LITE: {
+    ticker:'LITE', name:'Lumentum Holdings', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $750-780',cls:'pill-blue'},{text:'Sulla MM Settimanale',cls:'pill-green'}],
+    desc:'Lumentum produce laser e componenti ottici per data center AI e telecomunicazioni. Rally da $30 a $1.035 in 18 mesi — uno dei più straordinari della lista. Ora sulla MM settimanale a $793.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $30 a $1.035 in 18 mesi (+3350%)'},
+      {data:'9 Giu 2026',testo:'Correzione a $793 (-23%) — sulla MM settimanale'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $750-780 — zona MM settimanale'},
+    ],
+    grafici:[
+      {file:'chart_LITE_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $30 a $1.035 in 18 mesi. MM settimanale $792,58 — prezzo esattamente sulla MM. RSI 58,7 — neutro.'},
+      {file:'chart_LITE_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $1.035 a $793 (-23%). MM giornaliera $922,39 — prezzo ben sotto. RSI 41,8 — quasi ipervenduto.'},
+    ],
+    analisi:'Siamo già sulla MM settimanale — questo è il livello di ingresso pianificato. Attenzione: titolo da ~€730 per azione su Fineco — verificare liquidità e spread. Solo 1 azione per la soglia €600.',
+    livelli:[
+      {label:'Ingresso Target',value:'$750 – $780 ← SIAMO QUI',cls:'positive'},
+      {label:'MM Settimanale',value:'$792,58',cls:'neutral'},
+      {label:'Stop',value:'Sotto $700',cls:'negative'},
+      {label:'Target',value:'$900 – $950',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:LITE',
+    news_url:'https://finance.yahoo.com/quote/LITE/news/',
+  },
+  FN: {
+    ticker:'FN', name:'Fabrinet', exchange:'NYSE',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $560-580',cls:'pill-green'},{text:'Sulla MM Settimanale',cls:'pill-green'}],
+    desc:'Fabrinet è il contract manufacturer per componenti ottici AI. Clienti: Lumentum, Coherent, Ciena. Trend rialzista da $150 a $750 tra i più lineari della lista. Siamo già sulla MM settimanale.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $150 a $750 in 2 anni — trend costante e lineare'},
+      {data:'9 Giu 2026',testo:'Correzione a $584 (-22%) — sulla MM settimanale'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Potenziale ingresso — siamo al livello target'},
+    ],
+    grafici:[
+      {file:'chart_FN_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $150 a $750 — trend lineare e pulito. MM settimanale $583,55 — prezzo esattamente sulla MM. RSI 51,5 — neutro.'},
+      {file:'chart_FN_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $750 a $584 (-22%). MM giornaliera $676,45 — prezzo ben sotto. RSI 39,8 — quasi ipervenduto.'},
+    ],
+    analisi:'Business model difensivo (contract manufacturing). Il livello $560-580 coincide con la MM settimanale — ottimo supporto strutturale. Verificare spread su Fineco (liquidità bassa su mercati europei).',
+    livelli:[
+      {label:'Ingresso Target',value:'$560 – $580 ← SIAMO QUI',cls:'positive'},
+      {label:'MM Settimanale',value:'$583,55',cls:'neutral'},
+      {label:'Stop',value:'Sotto $530',cls:'negative'},
+      {label:'Target',value:'$650 – $700',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:FN',
+    news_url:'https://finance.yahoo.com/quote/FN/news/',
   },
   NBIS: {
     ticker:'NBIS', name:'Nebius Group', exchange:'NASDAQ',
-    badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Target $215-220',cls:'pill-blue'},{text:'Aspettare rimbalzo MM',cls:'pill-gray'}],
-    desc:'Nebius è un\'infrastruttura cloud AI pura. Q1 2026: ricavi $399M da $51M YoY (+684%). Backed da Nvidia. Fondo Situational Awareness (ex-OpenAI) ha 5,6% stake. Accordo $2,6B con Bloom Energy per 328MW AI.',
+    badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Non Inseguire $225+',cls:'pill-red'},{text:'Insider vendono ⚠️',cls:'pill-red'}],
+    desc:'Nebius è infrastruttura cloud AI pura. Q1 2026 ricavi $399M (+684% YoY). Backed da Nvidia. Annuncio 8 giugno: £1,7B per espansione UK. Problema: 16 vendite insider, zero acquisti nell\'ultimo anno.',
     eventi_passati:[
-      {data:'Q1 2026',testo:'Ricavi $399M (+684% YoY) — swing da perdita a profitto'},
-      {data:'3 Giu 2026',testo:'Top executive hanno venduto quote significative — ⚠️'},
-      {data:'2026',testo:'Accordo $2,6B con Bloom Energy per infrastruttura AI'},
+      {data:'Q1 2026',testo:'Ricavi $399M (+684% YoY) — swing a profitto'},
+      {data:'8 Giu 2026',testo:'Annuncio £1,7B investimento UK — +4,5% premarket'},
+      {data:'9 Giu 2026',testo:'A $223 — sopra target originale $215-220'},
     ],
     eventi_futuri:[
-      {data:'Finestra 12-17 Giu',testo:'Potenziale ingresso se media mobile tiene'},
+      {data:'2027',testo:'65MW capacity UK da 3 nuovi siti Nvidia'},
     ],
     grafici:[
-      {file:'chart_NBIS_giornaliero.png',titolo:'3 Mesi (Giornaliero)',data:'5 Giu 2026',note:'Rally da $80 a $278 (+248%). Correzione -14% ha perforato media mobile. RSI ~55 in calo. Zona volumetrica $200-220. Aspettare rimbalzo confermato sopra MM.'},
+      {file:'chart_NBIS_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $30 a $278 (+826%) in 8 mesi. MM settimanale $144,52 — prezzo ben sopra. RSI 76,5 — ipercomprato. 16 vendite insider, zero acquisti.'},
+      {file:'chart_NBIS_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione $278→$218, rimbalzo a $224 su catalyst UK. MM giornaliera $173 — prezzo sopra. RSI 56,3 — neutro.'},
     ],
-    analisi:'Fondamentali reali ma valutazione 65x sales — alto rischio. ⚠️ Insider hanno venduto il 3 giugno. Aspettare segnale tecnico pulito: rimbalzo sopra media mobile con volumi. Non inseguire.',
+    analisi:'Catalyst UK reale ma siamo sopra il target $215-220. Disciplina: non inseguire sopra $225. Aspettare prossimo pullback alla MM. Insider persistentemente venditori — da tenere sempre presente.',
     livelli:[
-      {label:'Ingresso Target',value:'$215 – $220',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $200',cls:'negative'},
-      {label:'Target',value:'$260 – $280',cls:'positive'},
-      {label:'Attenzione',value:'Insider vendono ⚠️',cls:'negative'},
+      {label:'Target (prossimo pullback)',value:'$215 – $220',cls:'positive'},
+      {label:'Non Inseguire Sopra',value:'$225',cls:'negative'},
+      {label:'Stop',value:'Sotto $200',cls:'negative'},
+      {label:'Attenzione',value:'Insider 16 vendite, 0 acquisti ⚠️',cls:'negative'},
     ],
     tv_symbol:'NASDAQ:NBIS',
     news_url:'https://finance.yahoo.com/quote/NBIS/news/',
   },
   ASX: {
     ticker:'ASX', name:'ASE Technology ADR', exchange:'NYSE',
-    badges:[{text:'Ordine Attivo',cls:'pill-blue'},{text:'×25 @ $32,50',cls:'pill-yellow'}],
-    desc:'ASE Technology è il più grande provider mondiale di packaging e testing per semiconduttori. Il segmento LEAP (advanced packaging AI) cresce del 167% a $1,6B. Fornitore critico per la filiera AI.',
+    badges:[{text:'Ordine Attivo',cls:'pill-blue'},{text:'×25 @ $32,50',cls:'pill-yellow'},{text:'Insider vendono ⚠️',cls:'pill-red'}],
+    desc:'ASE Technology è il più grande provider di packaging e testing semiconduttori. LEAP segment (+167% a $1,6B) è il driver AI. Ordine attivo a $32,50 — livello valore intrinseco + MM settimanale.',
     eventi_passati:[
-      {data:'Apr 2026',testo:'Segmento ATM: +23,1% YoY'},
-      {data:'2026',testo:'LEAP segment: +167% a $1,6B — raddoppio atteso 2026'},
+      {data:'2026',testo:'LEAP segment: +167% a $1,6B'},
       {data:'2026',testo:'⚠️ Insider vendono $349M in 3 mesi — zero acquisti'},
     ],
     eventi_futuri:[
-      {data:'Ordine attivo',testo:'×25 @ $32,50 — livello valore intrinseco + media mobile'},
+      {data:'Ordine',testo:'×25 @ $32,50 — ancora distante ~7%'},
     ],
     grafici:[
-      {file:'chart_ASX_giornaliero.png',titolo:'Giornaliero',data:'5 Giu 2026',note:'Trend rialzista da $20 a $41 (+105%). Correzione verso media mobile. MM a $31-32. Zona volumetrica $30-35.'},
+      {file:'chart_ASX_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Trend da $10 a $41. MM settimanale $27,33 — prezzo sopra. RSI 71,5 — ipercomprato.'},
+      {file:'chart_ASX_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $41 a $35. MM giornaliera $35,14 — prezzo sulla MM. RSI 50,7 — neutro.'},
     ],
-    analisi:'Business AI packaging solido. Valore intrinseco stimato $32. Ordine a $32,50 è ben posizionato sulla convergenza tra valore intrinseco, media mobile e supporto volumetrico. Unico rischio: insider in distribuzione pesante.',
+    analisi:'Ordine ben posizionato sulla convergenza tra valore intrinseco, MM settimanale e supporto volumetrico. Il rischio principale sono gli insider in distribuzione pesante.',
     livelli:[
       {label:'Ordine Attivo',value:'×25 @ $32,50 ✅',cls:'positive'},
-      {label:'Valore Intrinseco',value:'~$32',cls:'neutral'},
-      {label:'Stop Mentale',value:'Sotto $29',cls:'negative'},
+      {label:'Stop',value:'Sotto $29',cls:'negative'},
       {label:'Target',value:'$38 – $40',cls:'positive'},
     ],
     tv_symbol:'NYSE:ASX',
     news_url:'https://finance.yahoo.com/quote/ASX/news/',
   },
-  MRVL: {
-    ticker:'MRVL', name:'Marvell Technology', exchange:'NASDAQ',
-    badges:[{text:'S&P500 22 Giu',cls:'pill-yellow'},{text:'Aspetta Pullback $270-275',cls:'pill-blue'},{text:'RSI 74 Ipercomprato',cls:'pill-red'}],
-    desc:'Marvell produce chip per data center, storage e networking. Jensen Huang l\'ha definita "next trillion dollar company" a Computex 2026. Il 5 giugno è stata annunciata come nuova aggiunta all\'S&P500 con inclusione il 22 giugno.',
+  GFS: {
+    ticker:'GFS', name:'GlobalFoundries', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $65-68',cls:'pill-blue'},{text:'BofA Underperform',cls:'pill-red'}],
+    desc:'GlobalFoundries è una foundry semiconductor specializzata (non leading-edge). Focus su chip automotive, IoT, RF. CHIPS Act funding. Da $30 a $92 in 8 mesi, ora correzione a $71.',
     eventi_passati:[
-      {data:'5 Giu 2026',testo:'Annuncio inclusione S&P500 — +11% in 2 giorni'},
-      {data:'Mag 2026',testo:'Q1 FY27: $2,418B (+28% YoY) — record'},
-      {data:'Computex 2026',testo:'Jensen Huang: "next trillion dollar company"'},
-      {data:'8 Giu 2026',testo:'+14,56% a $301 — RSI ipercomprato 74'},
+      {data:'Mag 2026',testo:'Blocco 22M azioni venduto a $86,30 — segnale di attenzione'},
+      {data:'2026',testo:'Partnership Department of Energy (Genesis Mission)'},
     ],
     eventi_futuri:[
-      {data:'22 Giu 2026',testo:'Inclusione effettiva S&P500 — USCIRE PRIMA (sell the news)'},
-      {data:'Ago 2026',testo:'Guidance Q2: $2,7B (+35% YoY)'},
+      {data:'30 Lug 2026',testo:'Earnings Q2 2026'},
     ],
     grafici:[
-      {file:'chart_MRVL_giornaliero.png',titolo:'Giornaliero',data:'8 Giu 2026',note:'Rally +90% in 3 settimane. Correzione a $165. Rimbalzo +14% oggi su S&P500. RSI 74 ipercomprato. Volumi 126M. Resistenza $300-324. Aspettare pullback $270-275.'},
+      {file:'chart_GFS_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $30 a $92 in 8 mesi. MM settimanale $56,73 — prezzo sopra. RSI 64,4 — neutro. BofA target $65 — sotto il prezzo.'},
+      {file:'chart_GFS_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $92 a $71 (-23%). MM giornaliera $77,78 — prezzo sotto. RSI 46,4 — debole.'},
     ],
-    analisi:'Strategia pre-index: gli ETF S&P500 sono obbligati ad acquistare il 22 giugno. Pressione compratori meccanica garantita. Ma RSI a 74 e +14% in un giorno — NON inseguire. Aspettare pullback a $270-275 per entry pulita. Target: uscire entro 21 giugno.',
+    analisi:'Non è un AI pure play — semiconductor generale. BofA ha target $65. La vendita di blocco 22M azioni è un segnale negativo. Monitorare con cautela — ingresso solo se scende alla MM settimanale a $65-68.',
     livelli:[
-      {label:'Strategia',value:'Pre-Index S&P500',cls:'yellow'},
-      {label:'Ingresso (dopo pullback)',value:'$270 – $275',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $255',cls:'negative'},
-      {label:'Target Uscita',value:'21-22 Giugno',cls:'yellow'},
-      {label:'RSI Attuale',value:'74 — IPERCOMPRATO ⚠️',cls:'negative'},
+      {label:'Ingresso Target',value:'$65 – $68',cls:'positive'},
+      {label:'BofA Target',value:'$65 — Underperform',cls:'negative'},
+      {label:'Stop',value:'Sotto $58',cls:'negative'},
+      {label:'Target',value:'$80 – $85',cls:'positive'},
     ],
-    tv_symbol:'NASDAQ:MRVL',
-    news_url:'https://finance.yahoo.com/quote/MRVL/news/',
+    tv_symbol:'NASDAQ:GFS',
+    news_url:'https://finance.yahoo.com/quote/GFS/news/',
   },
-  FRMI: {
-    ticker:'FRMI', name:'Fermi Energy Corp.', exchange:'NASDAQ',
-    badges:[{text:'In Portafoglio',cls:'pill-red'},{text:'147 az. @ $6,35',cls:'pill-red'},{text:'⚠️ LIMITE $5',cls:'pill-red'}],
-    desc:'Fermi Energy è focalizzata su Project Matador. IPO a $21 nel 2025, crollo -80% per rescissione deal principale, class action pendente e CEO dimissionario. Zero ricavi.',
+  HIVE: {
+    ticker:'HIVE', name:'Hive Digital Technologies', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Pivot Mining→AI',cls:'pill-blue'},{text:'Speculativo',cls:'pill-gray'}],
+    desc:'Hive Digital sta pivotando da Bitcoin mining a AI infrastructure. BUZZ HPC: gigafactory 320MW nel Greater Toronto Area ($3,5B, 100.000+ GPU Nvidia, 2H 2027). FY2026 revenue $297,8M (+158% YoY).',
     eventi_passati:[
-      {data:'Ott 2025',testo:'IPO a $21'},
-      {data:'Dic 2025',testo:'Rescissione accordo $150M con primo tenant — crollo -34%'},
-      {data:'2026',testo:'Class action per frode — CEO dimissionario'},
-      {data:'Apr-Mag 2026',testo:'Rimbalzo tecnico da $4,47 a $7,50 (+67%) poi nuova discesa'},
+      {data:'Mag 2026',testo:'Annuncio gigafactory 320MW GTA — +28% in un giorno'},
+      {data:'Q4 FY2026',testo:'Revenue $71,8M (+130% YoY) — record'},
+      {data:'9 Giu 2026',testo:'A $3,63 — correzione sul selloff generale'},
     ],
     eventi_futuri:[
-      {data:'Post 12 Giu',testo:'Rivalutazione posizione dopo IPO SpaceX'},
-      {data:'TBD',testo:'Annuncio nuovo tenant Project Matador — catalyst necessario'},
+      {data:'2H 2027',testo:'Go-live gigafactory GTA — catalyst principale'},
+      {data:'2028',testo:'Target ARR $660M'},
     ],
     grafici:[
-      {file:'chart_FRMI_giornaliero.png',titolo:'Giornaliero',data:'5 Giu 2026',note:'Downtrend strutturale da $21 a $5. Zero segnali inversione. RSI 43. Rimbalzo apr-mag tecnico, non fondamentale. Ora $5,70 — vicinissimo al limite $5.'},
+      {file:'chart_HIVE_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Spike $7,50 poi distribuzione a $2,50, rimbalzo a $4,50. MM settimanale $2,63 — prezzo sopra. RSI 57,3. A/D Line negativa strutturale.'},
+      {file:'chart_HIVE_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Rally $2→$5 maggio, correzione a $3,63. MM giornaliera $3,84 — prezzo sotto. RSI 49,7 — neutro.'},
     ],
-    analisi:'POSIZIONE RISCHIOSA. Zero ricavi, CEO dimissionario, class action pendente. Il limite mentale $5 va rispettato SENZA ESITAZIONI se scende. Nessuna azione fino a post-12 giugno.',
+    analisi:'Pivot AI reale con asset concreti (infrastruttura idroelettrica esistente). Ma il gigafactory è a 18+ mesi. Cantor Fitzgerald Overweight target $7. Posizione piccola e speculativa.',
     livelli:[
-      {label:'Posizione',value:'147 az. @ $6,35',cls:'negative'},
-      {label:'Prezzo Attuale',value:'~$5,70',cls:'negative'},
-      {label:'LIMITE MENTALE',value:'$5,00 → USCITA IMMEDIATA',cls:'negative'},
-      {label:'P&L',value:'~-€85',cls:'negative'},
-      {label:'Decisione',value:'Nessuna azione fino a post-12 Giu',cls:'neutral'},
+      {label:'Ingresso Target',value:'$3,20 – $3,50',cls:'positive'},
+      {label:'Stop',value:'Sotto $2,80',cls:'negative'},
+      {label:'Target',value:'$5 – $6',cls:'positive'},
+      {label:'Cantor Target',value:'$7 — Overweight',cls:'positive'},
     ],
-    tv_symbol:'NASDAQ:FRMI',
-    news_url:'https://finance.yahoo.com/quote/FRMI/news/',
+    tv_symbol:'NASDAQ:HIVE',
+    news_url:'https://finance.yahoo.com/quote/HIVE/news/',
+  },
+  SNOW: {
+    ticker:'SNOW', name:'Snowflake', exchange:'NYSE',
+    badges:[{text:'Watchlist AI/Software',cls:'pill-yellow'},{text:'Target $200-210',cls:'pill-blue'}],
+    desc:'Snowflake è una cloud data platform con crescita AI workloads (Cortex AI). Lungo downtrend fino a $120, poi inversione reale con rimbalzo esplosivo a $270 aprile. Ora correzione fisiologica a $230.',
+    eventi_passati:[
+      {data:'2026',testo:'Inversione da $120 a $270 — trend cambiato'},
+      {data:'9 Giu 2026',testo:'Correzione a $230 (-15%) da $270'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $200-210 — MM giornaliera'},
+    ],
+    grafici:[
+      {file:'chart_SNOW_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Downtrend $270→$120, rimbalzo esplosivo a $270 aprile. MM settimanale $173,43 — prezzo sopra. RSI 60,3.'},
+      {file:'chart_SNOW_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $270 a $230. MM giornaliera $201,71 — prezzo sopra. RSI 61,4 — neutro.'},
+    ],
+    analisi:'Inversione del trend strutturale confermata. Ingresso ideale a $200-210 dove converge la MM giornaliera.',
+    livelli:[
+      {label:'Ingresso Target',value:'$200 – $210',cls:'positive'},
+      {label:'Stop',value:'Sotto $185',cls:'negative'},
+      {label:'Target',value:'$260 – $270',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:SNOW',
+    news_url:'https://finance.yahoo.com/quote/SNOW/news/',
+  },
+  SMCI: {
+    ticker:'SMCI', name:'Super Micro Computer', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $32-35',cls:'pill-blue'},{text:'Rischio Contabile',cls:'pill-red'}],
+    desc:'Super Micro produce server AI per data center. Da $17 a $60 poi calo a $38. Sulla MM giornaliera. Attenzione: storia contabile problematica nel 2024 (ritardi depositi, indagini).',
+    eventi_passati:[
+      {data:'2024',testo:'Problemi contabili — ritardi bilanci, indagini'},
+      {data:'2026',testo:'Da $17 a $60 rimbalzo, ora correzione a $38'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $32-35 — MM settimanale'},
+    ],
+    grafici:[
+      {file:'chart_SMCI_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $17 a $60 poi calo a $20, rimbalzo a $50, ora $38. MM settimanale $31,25. RSI 55.'},
+      {file:'chart_SMCI_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $50 a $38 (-24%). MM giornaliera $38,67 — prezzo sulla MM. RSI 51,3.'},
+    ],
+    analisi:'Posizione piccola se si entra — il rischio contabile è reale e non ignorabile. Il livello $32-35 è sulla MM settimanale.',
+    livelli:[
+      {label:'Ingresso Target',value:'$32 – $35',cls:'positive'},
+      {label:'Stop',value:'Sotto $28',cls:'negative'},
+      {label:'Target',value:'$45 – $48',cls:'positive'},
+      {label:'Rischio',value:'Storia contabile problematica ⚠️',cls:'negative'},
+    ],
+    tv_symbol:'NASDAQ:SMCI',
+    news_url:'https://finance.yahoo.com/quote/SMCI/news/',
+  },
+  AXTI: {
+    ticker:'AXTI', name:'AXT Inc.', exchange:'NASDAQ',
+    badges:[{text:'Watchlist AI/Chip',cls:'pill-yellow'},{text:'Target $70-75',cls:'pill-blue'},{text:'Correzione in corso',cls:'pill-red'}],
+    desc:'AXT produce substrati semiconduttore per chip fotonica e compound semiconductors. Rally da $5 a $150 poi correzione pesante a $82. MM giornaliera a $111 — prezzo lontano.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $5 a $150 — rally esplosivo'},
+      {data:'9 Giu 2026',testo:'Correzione a $82 (-45% dai massimi)'},
+    ],
+    eventi_futuri:[],
+    grafici:[
+      {file:'chart_AXTI_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $5 a $150, correzione a $82. MM settimanale $67,89 — prezzo sopra. RSI 56,6.'},
+      {file:'chart_AXTI_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione pesante in corso. MM giornaliera $111,91 — prezzo ben sotto. RSI 39,8 — quasi ipervenduto.'},
+    ],
+    analisi:'Non entrare ora — prezzo lontano dalla MM giornaliera ($111 vs $82). Aspettare stabilizzazione e possibile rimbalzo confermato.',
+    livelli:[
+      {label:'Ingresso Target',value:'$70 – $75',cls:'positive'},
+      {label:'MM Settimanale',value:'$67,89',cls:'neutral'},
+      {label:'Stop',value:'Sotto $60',cls:'negative'},
+      {label:'Target',value:'$100 – $110',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:AXTI',
+    news_url:'https://finance.yahoo.com/quote/AXTI/news/',
+  },
+  MU: {
+    ticker:'MU', name:'Micron Technology', exchange:'NASDAQ',
+    badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'Target $820-850',cls:'pill-yellow'},{text:'HBM4 Leader',cls:'pill-green'}],
+    desc:'Micron è il terzo produttore mondiale di chip di memoria. Fornitore critico HBM4 per GPU Nvidia. Q2 FY2026 record: $23,86B (+196% YoY). Spostato in Watchlist Balene — per sizing significativo.',
+    eventi_passati:[
+      {data:'Mar 2026',testo:'Q2 FY26 record: $23,86B (+196% YoY), EPS $12,20 vs $9,31'},
+      {data:'2026',testo:'HBM4 in produzione — fornitore chiave Blackwell/Vera Rubin'},
+      {data:'9 Giu 2026',testo:'A $984 — RSI settimanale 78,9 — ipercomprato'},
+    ],
+    eventi_futuri:[
+      {data:'2026',testo:'Guidance Q3: $33,5B ricavi, EPS $19,15'},
+    ],
+    grafici:[
+      {file:'chart_MU_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $200 a $1.000 in 6 mesi. MM settimanale $548. RSI settimanale 78,9 — ipercomprato. A/D Line in salita.'},
+      {file:'chart_MU_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione -9% poi rimbalzo a $984. MM giornaliera $862. RSI 63,2 — neutro. Resistenza $1.000 psicologica.'},
+    ],
+    analisi:'Fondamentali record. Memoria AI è asset strategico critico. RSI settimanale ipercomprato — per sizing da Balene aspettare pullback a $820-850 (MM giornaliera). A 1 azione per soglia: verificare sempre.',
+    livelli:[
+      {label:'Ingresso (Balene)',value:'$820 – $850',cls:'positive'},
+      {label:'Resistenza',value:'$1.000 — psicologica',cls:'negative'},
+      {label:'Stop Mentale',value:'Sotto $780',cls:'negative'},
+      {label:'Target',value:'$1.000 – $1.100',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:MU',
+    news_url:'https://finance.yahoo.com/quote/MU/news/',
+  },
+  RKLB: {
+    ticker:'RKLB', name:'Rocket Lab USA', exchange:'NASDAQ',
+    badges:[{text:'Watchlist Space',cls:'pill-blue'},{text:'Target $100-105',cls:'pill-yellow'},{text:'Post-IPO SpaceX',cls:'pill-gray'}],
+    desc:'Rocket Lab è il leader nel lancio commerciale small satellite. Trend strutturale da $4 a $150 in 2 anni. Correzione post-spike a $114. Target $100-105 nella finestra 12-17 giugno.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $4 a $150 in 2 anni — trend strutturale fortissimo'},
+      {data:'Mag 2026',testo:'Spike a $150 poi distribuzione a $114'},
+    ],
+    eventi_futuri:[
+      {data:'12 Giu 2026',testo:'IPO SpaceX — fine dumping pre-IPO'},
+      {data:'12-17 Giu',testo:'Finestra ottimale ingresso'},
+    ],
+    grafici:[
+      {file:'chart_RKLB_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $4 a $150 in 2 anni — trend straordinario. MM settimanale $87 — prezzo ben sopra. RSI 61,4 — neutro. A/D Line in salita costante.'},
+      {file:'chart_RKLB_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Rally $75→$150 maggio, distribuzione a $114. MM giornaliera $127,89 — prezzo sotto. RSI 49,9 — neutro. Zona densa $100-130.'},
+    ],
+    analisi:'Trend strutturale fortissimo su 2 anni. Il dumping pre-SpaceX ha creato l\'opportunità pianificata. Finestra 12-17 giugno dopo la fine del dumping.',
+    livelli:[
+      {label:'Ingresso Target',value:'$100 – $105',cls:'positive'},
+      {label:'Stop',value:'Sotto $90',cls:'negative'},
+      {label:'Target',value:'$130 – $140',cls:'positive'},
+      {label:'Timing',value:'Finestra 12-17 Giugno',cls:'yellow'},
+    ],
+    tv_symbol:'NASDAQ:RKLB',
+    news_url:'https://finance.yahoo.com/quote/RKLB/news/',
+  },
+  RDW: {
+    ticker:'RDW', name:'Redwire Corporation', exchange:'NYSE',
+    badges:[{text:'Watchlist Space',cls:'pill-blue'},{text:'Target $15,50',cls:'pill-yellow'},{text:'Diga Volumetrica',cls:'pill-gray'}],
+    desc:'Redwire produce componenti per spacecraft e infrastrutture spaziali. Da $3 a $24 in 6 mesi. Correzione a $17 in corso. Target $15,50 — diga volumetrica storica.',
+    eventi_passati:[
+      {data:'2026',testo:'Da $3 a $24 in 6 mesi — rally esplosivo'},
+      {data:'9 Giu 2026',testo:'Correzione a $17 (-29% dai massimi)'},
+    ],
+    eventi_futuri:[
+      {data:'12-17 Giu',testo:'Target $15,50 — diga volumetrica'},
+    ],
+    grafici:[
+      {file:'chart_RDW_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $3 a $24, ora correzione a $17. MM settimanale $11,67. RSI 59,5 — neutro. A/D Line in salita.'},
+      {file:'chart_RDW_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $24 a $17 (-29%). MM giornaliera $17,92 — prezzo appena sotto. RSI 50,7.'},
+    ],
+    analisi:'$15,50 è una diga volumetrica importante — zona di massimo accumulo storico. Aspettare che il dumping pre-SpaceX porti il titolo a quel livello.',
+    livelli:[
+      {label:'Ingresso Target',value:'$15,50',cls:'positive'},
+      {label:'Stop',value:'Sotto $13',cls:'negative'},
+      {label:'Target',value:'$22 – $25',cls:'positive'},
+      {label:'Timing',value:'Finestra 12-17 Giugno',cls:'yellow'},
+    ],
+    tv_symbol:'NYSE:RDW',
+    news_url:'https://finance.yahoo.com/quote/RDW/news/',
   },
   IONQ: {
     ticker:'IONQ', name:'IonQ Inc.', exchange:'NYSE',
-    badges:[{text:'Quantum',cls:'pill-blue'},{text:'Target $53-55',cls:'pill-yellow'},{text:'Finestra 12-17 Giu',cls:'pill-blue'}],
-    desc:'IonQ è la prima società di quantum computing quotata. Tecnologia a ioni intrappolati. Prima società quantum a superare $100M ricavi annui. Q1 2026: $64,7M ricavi (+755% YoY).',
+    badges:[{text:'Quantum — Priorità Alta',cls:'pill-green'},{text:'Target $53-55',cls:'pill-yellow'},{text:'Fondamentali Reali',cls:'pill-blue'}],
+    desc:'IonQ è la prima società di quantum computing quotata. Prima a superare $100M ricavi annui. Q1 2026: $64,7M ricavi (+755% YoY). Cassa $3,1B. Sistema 256-qubit in sviluppo — presold primo chip.',
     eventi_passati:[
-      {data:'Q1 2026',testo:'$64,7M ricavi (+755% YoY) — record. Backlog $470M (+554%)'},
+      {data:'Q1 2026',testo:'$64,7M ricavi (+755% YoY), backlog $470M (+554%)'},
       {data:'Mag 2026',testo:'Rally da $33 a $75 (+127%) poi correzione'},
-      {data:'Giu 2026',testo:'IPO Quantinuum crea pressione competitiva percepita sul settore'},
+      {data:'Giu 2026',testo:'IPO Quantinuum — pressione sul settore'},
     ],
     eventi_futuri:[
       {data:'FY2026',testo:'Guidance $260-270M (+104% YoY)'},
-      {data:'2026',testo:'Sistema 256-qubit in sviluppo — presold primo chip'},
+      {data:'2026',testo:'256-qubit system — primo chip presold'},
     ],
     grafici:[
-      {file:'chart_IONQ_giornaliero.png',titolo:'3 Mesi (Giornaliero)',data:'5 Giu 2026',note:'Rally $33→$75 (+127%). Ha perforato media mobile al ribasso. Volumi alti 26,4M sul rosso. Zona volumetrica densa $53-55. RSI in calo.'},
+      {file:'chart_IONQ_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $5 a $75 in 18 mesi. MM settimanale $42,82 — prezzo sopra. RSI 60,4 — neutro. A/D Line in salita costante.'},
+      {file:'chart_IONQ_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Rally $38→$75, correzione a $48, rimbalzo a $63. MM giornaliera $61,09 — prezzo sopra. RSI 55,7 — neutro.'},
     ],
-    analisi:'Leader quantum con fondamentali reali. Cassa $3,1B. Il calo è legato all\'IPO Quantinuum, non a problemi fondamentali. Aspettare ritorno sulla media mobile o rimbalzo pulito da $53-55 con volumi in calo.',
+    analisi:'Leader quantum con fondamentali reali. Cassa $3,1B garantisce runway lungo. Target $53-55 ancora a -15% dai prezzi attuali — aspettare il pullback, non inseguire a $63.',
     livelli:[
       {label:'Ingresso Target',value:'$53 – $55',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $48',cls:'negative'},
+      {label:'Stop',value:'Sotto $48',cls:'negative'},
       {label:'Target',value:'$70 – $75',cls:'positive'},
       {label:'Cassa',value:'$3,1B — runway ampio',cls:'neutral'},
     ],
@@ -622,45 +961,94 @@ const stocks = {
   },
   QBTS: {
     ticker:'QBTS', name:'D-Wave Quantum Inc.', exchange:'NYSE',
-    badges:[{text:'Quantum Annealing',cls:'pill-blue'},{text:'Target $22-23',cls:'pill-yellow'},{text:'Già Commerciale',cls:'pill-green'}],
-    desc:'D-Wave è pioniere nel quantum annealing — tecnologia già commerciale per ottimizzazione complessa. Più concreto di IonQ per applicazioni immediate. Target analisti $35-40.',
+    badges:[{text:'Quantum — Priorità Alta',cls:'pill-green'},{text:'Target $22-23',cls:'pill-yellow'},{text:'Già Commerciale',cls:'pill-green'}],
+    desc:'D-Wave è pioniere nel quantum annealing — tecnologia già commerciale oggi su problemi di ottimizzazione. Più concreto di IonQ per applicazioni immediate. Target analisti $35-40 (Strong Buy 14 analisti). Conference 18 giugno Londra.',
     eventi_passati:[
       {data:'Giu 2026',testo:'Primo Investor Day NYSE — roadmap gate-model annunciata'},
-      {data:'Giu 2026',testo:'IPO Quantinuum crea pressione sul settore (-11%)'},
+      {data:'Mag 2026',testo:'Trump $2B quantum investment — D-Wave tra beneficiari'},
     ],
     eventi_futuri:[
       {data:'18 Giu 2026',testo:'Qubits Europe 2026 — D-Wave a Londra'},
-      {data:'2026',testo:'Target analisti $35-40 (Strong Buy 14 analisti)'},
     ],
     grafici:[
-      {file:'chart_QBTS_giornaliero.png',titolo:'Giornaliero',data:'5 Giu 2026',note:'Rally da $12 a $46 (52w range). Correzione a $24 (-47%). Media mobile $22-23. RSI ~46. Zona volumetrica $22-25.'},
+      {file:'chart_QBTS_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $2 a $46 in modo progressivo — trend più pulito del settore. MM settimanale $20,28 — prezzo sopra. RSI 55,2.'},
+      {file:'chart_QBTS_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Rally $12→$46, correzione a $17, rimbalzo a $26. MM giornaliera $25,14 — prezzo sopra. RSI 53,4.'},
     ],
-    analisi:'Già genera ricavi da clienti reali con quantum annealing. Calo legato a rumore IPO Quantinuum. Media mobile $22-23 è livello di ingresso pulito. Upside 50-60% al target analisti.',
+    analisi:'Già genera ricavi reali. Calo legato a rumore IPO Quantinuum. Target $22-23 è sulla MM giornaliera — ottimo livello strutturale. Upside 50-60% al target analisti $35-40.',
     livelli:[
       {label:'Ingresso Target',value:'$22 – $23',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $18',cls:'negative'},
+      {label:'Stop',value:'Sotto $18',cls:'negative'},
       {label:'Target',value:'$32 – $35',cls:'positive'},
       {label:'Target Analisti',value:'$35 – $40 (Strong Buy)',cls:'positive'},
     ],
     tv_symbol:'NYSE:QBTS',
     news_url:'https://finance.yahoo.com/quote/QBTS/news/',
   },
-  QUTM: {
-    ticker:'QUTM', name:'VanEck Quantum Computing ETF', exchange:'XETRA',
-    badges:[{text:'ETF Quantum',cls:'pill-blue'},{text:'Lungo Termine',cls:'pill-green'},{text:'Target €25-26',cls:'pill-yellow'}],
-    desc:'ETF tematico che investe nelle principali società di quantum computing. Lanciato maggio 2025, TER 0,55%, accumulante. Holdings principali: IonQ 9,19%, Intel 6,87%, Nokia 5,62%, D-Wave 5,14%, Google 4,35%.',
+  IBM: {
+    ticker:'IBM', name:'IBM Corporation', exchange:'NYSE',
+    badges:[{text:'Quantum Serio',cls:'pill-blue'},{text:'$10B Investment',cls:'pill-green'},{text:'Target $265-270',cls:'pill-yellow'}],
+    desc:'IBM non è solo vecchia economia — è il player più serio nel quantum con $10 miliardi investiti nei prossimi 5 anni. Obiettivo: primo computer fault-tolerant entro 2029 (Quantum Starling). 340+ organizzazioni con workload reali oggi. Qiskit usato dal 70% degli sviluppatori quantum.',
     eventi_passati:[
-      {data:'Mag 2025',testo:'Lancio ETF — da allora +13,57%'},
-      {data:'Giu 2026',testo:'Correzione -3,46% su selloff quantum generale'},
+      {data:'2 Giu 2026',testo:'Annuncio $10B investimento quantum in 5 anni'},
+      {data:'Q1 2026',testo:'EPS $1,91 vs attese $1,81 — beat'},
+      {data:'2026',testo:'Partnership DARPA e Cisco su quantum networking'},
     ],
     eventi_futuri:[
-      {data:'2026',testo:'Espansione tematica quantum computing'},
-      {data:'Target',testo:'Ingresso ideale €25-26 su media mobile'},
+      {data:'2026',testo:'Quantum advantage atteso dai partner IBM'},
+      {data:'2029',testo:'IBM Quantum Starling — primo fault-tolerant computer'},
     ],
     grafici:[
-      {file:'chart_QUTM_giornaliero.png',titolo:'Giornaliero',data:'5 Giu 2026',note:'Da €20 a €30 in 2 mesi. Correzione -3,46% a €27,78. Media mobile ~€25,50. RSI ~58 in calo. Zona volumetrica €26-27. Aspettare €25-26 per ingresso ideale.'},
+      {file:'chart_IBM_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $220 a $340 poi distribuzione a $250, rimbalzo a $282. MM settimanale $255,66 — prezzo sopra. RSI 55,4 — neutro.'},
+      {file:'chart_IBM_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Rally $222→$310 post-annuncio quantum, correzione a $282. MM giornaliera $261 — prezzo sopra. RSI 57,9 — neutro.'},
     ],
-    analisi:'La scelta più sensata per esposizione quantum senza scommettere su un singolo titolo. Nessuna fretta — aspettare un panic selling settoriale o ritracciamento verso €25-26. Non inseguire.',
+    analisi:'IBM è il quantum play con il risk/reward più equilibrato: fondamentali solidi, $10B commitment, infrastruttura reale già esistente. Non ha la volatilità di IonQ o D-Wave ma è il player più credibile a lungo termine.',
+    livelli:[
+      {label:'Ingresso Target',value:'$265 – $270',cls:'positive'},
+      {label:'MM Settimanale',value:'$255,66 — supporto',cls:'neutral'},
+      {label:'Stop',value:'Sotto $250',cls:'negative'},
+      {label:'Target',value:'$310 – $320',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:IBM',
+    news_url:'https://finance.yahoo.com/quote/IBM/news/',
+  },
+  RGTI: {
+    ticker:'RGTI', name:'Rigetti Computing', exchange:'NASDAQ',
+    badges:[{text:'Quantum',cls:'pill-blue'},{text:'Target $19-20',cls:'pill-yellow'},{text:'Più Speculativo',cls:'pill-gray'}],
+    desc:'Rigetti Computing usa superconducting qubit — approccio gate-model. Meno solido di IonQ e D-Wave sia fondamentalmente che tecnicamente. Da $1 a $50 poi crollo a $8, rimbalzo a $22.',
+    eventi_passati:[
+      {data:'Fine 2024',testo:'Da $1 a $50 — poi crollo a $8'},
+      {data:'2026',testo:'Rimbalzo a $22 — distribuzione in corso'},
+    ],
+    eventi_futuri:[],
+    grafici:[
+      {file:'chart_RGTI_settimanale.png',titolo:'Settimanale (2 anni)',data:'9 Giu 2026',note:'Da $1 a $50 poi crollo a $8, rimbalzo a $22. MM settimanale $18,05. RSI 52,8 — neutro.'},
+      {file:'chart_RGTI_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Distribuzione da $27 a $22. MM giornaliera $22,20 — prezzo appena sotto. RSI 51,8 — neutro piatto.'},
+    ],
+    analisi:'Meno solido di IonQ e D-Wave. Posizione piccola se si entra. Target $19-20 sulla MM settimanale.',
+    livelli:[
+      {label:'Ingresso Target',value:'$19 – $20',cls:'positive'},
+      {label:'Stop',value:'Sotto $16',cls:'negative'},
+      {label:'Target',value:'$26 – $28',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:RGTI',
+    news_url:'https://finance.yahoo.com/quote/RGTI/news/',
+  },
+  QUTM: {
+    ticker:'QUTM', name:'VanEck Quantum Computing ETF', exchange:'XETRA',
+    badges:[{text:'ETF Quantum',cls:'pill-blue'},{text:'Target €25-26',cls:'pill-yellow'},{text:'Diversificato',cls:'pill-green'}],
+    desc:'ETF tematico quantum su Euronext. Holdings: IonQ 9,19%, Intel 6,87%, Nokia 5,62%, D-Wave 5,14%. TER 0,55%, accumulante. Utile come esposizione diversificata senza scommettere su un singolo titolo.',
+    eventi_passati:[
+      {data:'Mag 2025',testo:'Lancio ETF'},
+      {data:'9 Giu 2026',testo:'A €27,41 — RSI settimanale 69,4 quasi ipercomprato'},
+    ],
+    eventi_futuri:[
+      {data:'Target',testo:'Ingresso ideale €25-26 su pullback'},
+    ],
+    grafici:[
+      {file:'chart_QUTM_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da €19 a €30. MM settimanale $22,81 — prezzo sopra. RSI 69,4 — quasi ipercomprato.'},
+      {file:'chart_QUTM_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Trend rialzista da aprile. MM giornaliera $27,41. RSI 54,7 — neutro.'},
+    ],
+    analisi:'La scelta più sensata per esposizione quantum senza concentrazione su un singolo titolo. Aspettare pullback a €25-26 — non inseguire.',
     livelli:[
       {label:'Ingresso Ideale',value:'€25 – €26',cls:'positive'},
       {label:'Ingresso Profondo',value:'€22 – €23',cls:'positive'},
@@ -670,104 +1058,84 @@ const stocks = {
     tv_symbol:'XETRA:QUTM',
     news_url:'https://finance.yahoo.com/quote/QUTM/news/',
   },
-  RKLB: {
-    ticker:'RKLB', name:'Rocket Lab USA', exchange:'NASDAQ',
-    badges:[{text:'Space Economy',cls:'pill-blue'},{text:'Target $100-105',cls:'pill-yellow'},{text:'Aspetta Post-12 Giu',cls:'pill-gray'}],
-    desc:'Rocket Lab è il leader nel lancio commerciale di piccoli satelliti. Gestisce circa 15 missioni l\'anno. Sta espandendo nel segmento spacecraft manufacturing. Fondamentali reali nel settore space commerciale.',
-    eventi_passati:[
-      {data:'2026',testo:'Ha sfondato al ribasso il livello $115 — target aggiornato'},
-      {data:'Giu 2026',testo:'Dumping pre-SpaceX IPO in corso — -10% questa settimana'},
-    ],
-    eventi_futuri:[
-      {data:'12 Giu 2026',testo:'IPO SpaceX — fine dumping pre-IPO'},
-      {data:'12-17 Giu',testo:'Finestra ottimale per ingresso post-dumping'},
-    ],
-    grafici:[],
-    analisi:'Dumping pre-SpaceX IPO artificialmente deprime il titolo. Il livello $100-105 è il target post-correzione. Aspettare la finestra 12-17 giugno quando il dumping finisce e i prezzi si stabilizzano.',
-    livelli:[
-      {label:'Ingresso Target',value:'$100 – $105',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $90',cls:'negative'},
-      {label:'Target',value:'$130 – $140',cls:'positive'},
-      {label:'Timing',value:'Finestra 12-17 Giugno',cls:'yellow'},
-    ],
-    tv_symbol:'NASDAQ:RKLB',
-    news_url:'https://finance.yahoo.com/quote/RKLB/news/',
-  },
-  RDW: {
-    ticker:'RDW', name:'Redwire Corporation', exchange:'NYSE',
-    badges:[{text:'Space Economy',cls:'pill-blue'},{text:'Target $15,50',cls:'pill-yellow'},{text:'Diga Volumetrica',cls:'pill-gray'}],
-    desc:'Redwire produce componenti per spacecraft e infrastrutture spaziali. Opera nel segmento space infrastructure per NASA, DoD e clienti commerciali.',
-    eventi_passati:[
-      {data:'Giu 2026',testo:'Dumping pre-SpaceX — sceso da $21 verso $19'},
-    ],
-    eventi_futuri:[
-      {data:'12-17 Giu',testo:'Finestra ottimale per ingresso'},
-      {data:'Target',testo:'$15,50 — diga volumetrica'},
-    ],
-    grafici:[],
-    analisi:'Il target $15,50 è una diga volumetrica importante — zona di massimo accumulo storico. Aspettare che il dumping pre-SpaceX porti il titolo a quel livello.',
-    livelli:[
-      {label:'Ingresso Target',value:'$15,50',cls:'positive'},
-      {label:'Stop Mentale',value:'Sotto $13',cls:'negative'},
-      {label:'Target',value:'$22 – $25',cls:'positive'},
-      {label:'Timing',value:'Finestra 12-17 Giugno',cls:'yellow'},
-    ],
-    tv_symbol:'NYSE:RDW',
-    news_url:'https://finance.yahoo.com/quote/RDW/news/',
-  },
   SOFI: {
     ticker:'SOFI', name:'SoFi Technologies', exchange:'NASDAQ',
-    badges:[{text:'Pre-Index S&P500',cls:'pill-green'},{text:'Settembre 2026',cls:'pill-yellow'},{text:'10+ Trimestri GAAP',cls:'pill-blue'}],
-    desc:'SoFi è una banca digitale USA con 10 trimestri consecutivi di profittabilità GAAP — requisito chiave per l\'S&P500. Ha lanciato SoFiUSD, il primo stablecoin di una banca nazionale USA.',
+    badges:[{text:'Pre-Index S&P500',cls:'pill-green'},{text:'⚠️ QUASI AL TARGET $15',cls:'pill-red'},{text:'Settembre 2026',cls:'pill-yellow'}],
+    desc:'SoFi è una banca digitale USA con 10 trimestri consecutivi di profittabilità GAAP — requisito chiave per l\'S&P500. Market cap $23,4B. Lancio SoFiUSD (primo stablecoin banca USA). Acquisizione Stash Financial. A $15,87 — prima tranche a $15,00.',
     eventi_passati:[
-      {data:'Q1 2026',testo:'Utile netto $166,7M — 10° trimestre GAAP positivo consecutivo'},
-      {data:'2026',testo:'Lancio SoFiUSD — primo stablecoin banca USA'},
-      {data:'2025',testo:'Rally da $4 a $30 (+650%) poi correzione a $16'},
+      {data:'Q1 2026',testo:'Utile netto $166,7M — 10° trimestre GAAP positivo'},
+      {data:'2026',testo:'Lancio SoFiUSD — primo stablecoin banca nazionale USA'},
+      {data:'2026',testo:'Acquisizione Stash Financial ($425M) — espansione USA'},
+      {data:'9 Giu 2026',testo:'A $15,87 — prima tranche $15,00 QUASI RAGGIUNTA ⚠️'},
     ],
     eventi_futuri:[
       {data:'Set 2026',testo:'Potenziale inclusione S&P500 — rebalancing trimestrale'},
     ],
     grafici:[
-      {file:'chart_SOFI_settimanale.png',titolo:'Storico Settimanale',data:'8 Giu 2026',note:'IPO $25→$4 (2023)→$30 (2025)→$16 ora. Cemento volumetrico $8,50. Zona volumetrica recente $15-17. RSI settim. 41 quasi ipervenduto.'},
-      {file:'chart_SOFI_giornaliero.png',titolo:'3 Mesi (Giornaliero)',data:'8 Giu 2026',note:'Downtrend da $20 a $15,50. MM giornaliera $16,50. RSI 46. Rimbalzo oggi $16,24 (+1,31%) su volumi bassi.'},
+      {file:'chart_SOFI_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $30 a $15,87. MM settimanale $17,62 — prezzo sotto. RSI 40,1 — quasi ipervenduto. Cemento volumetrico $8,50.'},
+      {file:'chart_SOFI_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Laterale $15-20. MM giornaliera $16,33 — prezzo sotto. RSI 44,8 — debole. Zona volumetrica massima $15-17.'},
     ],
-    analisi:'Strategia pre-index: 10+ trimestri GAAP soddisfa requisito S&P500. Market cap $23,4B sopra soglia minima. SoFiUSD amplia l\'ecosistema. Ogni trimestre positivo avvicina l\'inclusione meccanica di settembre.',
+    analisi:'Strategia pre-index: 10+ trimestri GAAP soddisfa il requisito S&P500. Il selloff del 9 giugno ha portato il prezzo a $15,87 — a 87 centesimi dal target. Monitorare domani 10 giugno.',
     livelli:[
-      {label:'Prima Tranche',value:'$15,00',cls:'positive'},
+      {label:'Prima Tranche',value:'$15,00 ← A 87¢ DA QUI',cls:'positive'},
       {label:'Seconda Tranche',value:'$13,00 – $13,50',cls:'positive'},
       {label:'Stop Mentale',value:'Sotto $11,00',cls:'negative'},
-      {label:'Cemento Volumetrico Lungo',value:'$8,50',cls:'neutral'},
-      {label:'Target Annuncio S&P500',value:'$22 – $25',cls:'positive'},
+      {label:'Target S&P500',value:'$22 – $25',cls:'positive'},
     ],
     tv_symbol:'NASDAQ:SOFI',
     news_url:'https://finance.yahoo.com/quote/SOFI/news/',
   },
   RDDT: {
     ticker:'RDDT', name:'Reddit Inc.', exchange:'NYSE',
-    badges:[{text:'Pre-Index S&P500',cls:'pill-green'},{text:'Settembre 2026',cls:'pill-yellow'},{text:'Kalshi Candidato Principale',cls:'pill-blue'}],
-    desc:'Reddit è la principale piattaforma di community online, quotata marzo 2024. Vantaggio unico nell\'era AI: i contenuti Reddit sono dati di training preziosi. Profittabilità in miglioramento progressivo.',
+    badges:[{text:'Pre-Index S&P500',cls:'pill-green'},{text:'Settembre 2026',cls:'pill-yellow'},{text:'Target $155-160',cls:'pill-blue'}],
+    desc:'Reddit è la principale community platform online. Vantaggio unico nell\'era AI: i contenuti Reddit sono dati di training preziosi. Candidato principale S&P500 settembre 2026 secondo Kalshi.',
     eventi_passati:[
       {data:'Mar 2024',testo:'IPO a $34 su NYSE'},
-      {data:'2024-25',testo:'Rally da $34 a $230 (+580%), poi correzione a $55, rimbalzo $220'},
-      {data:'2026',testo:'Nuova correzione da $220 a $171 (-22%)'},
+      {data:'2026',testo:'Rally $34→$230→$55→$220, ora correzione a $169'},
+      {data:'9 Giu 2026',testo:'A $169 — target $155-160 in avvicinamento'},
     ],
     eventi_futuri:[
       {data:'Set 2026',testo:'Potenziale inclusione S&P500 — Kalshi candidato principale'},
-      {data:'2026',testo:'Espansione modello AI su contenuti Reddit'},
     ],
     grafici:[
-      {file:'chart_RDDT_settimanale.png',titolo:'Storico Settimanale',data:'8 Giu 2026',note:'IPO $34→$230→$55→$220→$171. MM settim. $151 in avvicinamento. RSI 51. Zona volumetrica $150-170.'},
-      {file:'chart_RDDT_giornaliero.png',titolo:'3 Mesi (Giornaliero)',data:'8 Giu 2026',note:'Downtrend $210→$144. Rimbalzo $175, ora $171. MM giornaliera $161. RSI 53. Zona volumetrica $144-165.'},
+      {file:'chart_RDDT_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'IPO $34→$230→$55→$220→$169. MM settimanale $151,24 — prezzo sopra. RSI 50,8.'},
+      {file:'chart_RDDT_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $183 a $169. MM giornaliera $161,53 — prezzo sopra. RSI 54,6.'},
     ],
-    analisi:'Candidata principale S&P500 settembre 2026 secondo Kalshi. Storia fondamentale unica — dati Reddit sono asset strategico AI. Profittabilità in miglioramento. Livello $155-160 ideale — zona volumetrica + media mobile.',
+    analisi:'Candidata principale S&P500 settembre 2026. Dati Reddit sono asset strategico AI unico. Target $155-160 converge con MM settimanale in avvicinamento.',
     livelli:[
       {label:'Prima Tranche',value:'$155 – $160',cls:'positive'},
       {label:'Seconda Tranche',value:'$140 – $144',cls:'positive'},
       {label:'Stop Mentale',value:'Sotto $130',cls:'negative'},
-      {label:'Target Annuncio S&P500',value:'$200 – $220',cls:'positive'},
+      {label:'Target S&P500',value:'$200 – $220',cls:'positive'},
     ],
     tv_symbol:'NYSE:RDDT',
     news_url:'https://finance.yahoo.com/quote/RDDT/news/',
+  },
+  MRVL: {
+    ticker:'MRVL', name:'Marvell Technology', exchange:'NASDAQ',
+    badges:[{text:'Pre-Index S&P500',cls:'pill-yellow'},{text:'22 Giugno',cls:'pill-red'},{text:'Pullback $260-275',cls:'pill-blue'}],
+    desc:'Marvell entra nell\'S&P500 il 22 giugno — tutti gli ETF S&P500 devono comprare. Pressione compratori meccanica garantita. Dopo il +11% post-annuncio e il -14% di oggi, ora a $248. Aspettare pullback $260-275.',
+    eventi_passati:[
+      {data:'5 Giu 2026',testo:'Annuncio inclusione S&P500 — +11% in 2 giorni'},
+      {data:'8 Giu 2026',testo:'+14,56% a $301 — RSI ipercomprato 74'},
+      {data:'9 Giu 2026',testo:'-14,17% a $248 — correzione violenta'},
+    ],
+    eventi_futuri:[
+      {data:'22 Giu 2026',testo:'Inclusione effettiva S&P500 — USCIRE PRIMA (sell the news)'},
+    ],
+    grafici:[
+      {file:'chart_MRVL_settimanale.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $70 a $324 in 3 mesi — parabolico. MM settimanale $136,18. RSI 84,9 — fortemente ipercomprato.'},
+      {file:'chart_MRVL_giornaliero.png',titolo:'Giornaliero (3 mesi)',data:'9 Giu 2026',note:'Correzione da $324 a $248 (-23%) in 4 giorni. MM giornaliera $218,31 — prezzo sopra. RSI 57,3.'},
+    ],
+    analisi:'Strategia pre-index pura. Comprare il pullback a $260-275 → vendere entro il 21 giugno. Il meccanismo ETF è garantito. RSI settimanale ipercomprato — aspettare la stabilizzazione prima di entrare.',
+    livelli:[
+      {label:'Ingresso (dopo pullback)',value:'$260 – $275',cls:'positive'},
+      {label:'Stop Mentale',value:'Sotto $240',cls:'negative'},
+      {label:'Target Uscita',value:'Entro 21 Giugno',cls:'yellow'},
+      {label:'Prezzo Attuale',value:'$248 — in avvicinamento',cls:'neutral'},
+    ],
+    tv_symbol:'NASDAQ:MRVL',
+    news_url:'https://finance.yahoo.com/quote/MRVL/news/',
   },
 };
 
@@ -807,7 +1175,7 @@ function showStock(ticker, el) {
       </div>
       <img class="chart-img" src="${g.file}" alt="${g.titolo}"
         onclick="openLightbox('${g.file}','${g.titolo} — ${g.data}')"
-        onerror="this.parentElement.innerHTML='<div style=\'padding:20px;text-align:center;color:var(--text3);font-size:12px;\'>📊 Carica ${g.file} nella stessa cartella</div>'">
+        onerror="this.parentElement.innerHTML='<div style=\\'padding:20px;text-align:center;color:var(--text3);font-size:12px;\\'>📊 Carica ${g.file} nella stessa cartella</div>'">
       <div class="chart-notes">${g.note}</div>
     </div>`).join('') :
     '<div class="box" style="grid-column:1/-1;color:var(--text3);font-size:12px;">Grafici da aggiungere nella prossima sessione di analisi.</div>';
@@ -824,12 +1192,10 @@ function showStock(ticker, el) {
         <a class="btn-action" href="https://www.tradingview.com/chart/?symbol=${s.tv_symbol}" target="_blank">📈 TradingView ↗</a>
       </div>
     </div>
-
     <div class="section">
       <div class="section-title">Descrizione</div>
       <div class="box"><div class="desc-text">${s.desc}</div></div>
     </div>
-
     <div class="section">
       <div class="section-title">Eventi</div>
       <div class="events-grid">
@@ -843,12 +1209,10 @@ function showStock(ticker, el) {
         </div>
       </div>
     </div>
-
     <div class="section">
       <div class="section-title">Grafici Storici <span style="font-size:10px;color:var(--text3);margin-left:4px;">clicca per ingrandire</span></div>
       <div class="charts-grid">${graficiHTML}</div>
     </div>
-
     <div class="section">
       <div class="section-title">Analisi e Livelli</div>
       <div class="analysis-grid">
@@ -862,7 +1226,6 @@ function showStock(ticker, el) {
         </div>
       </div>
     </div>
-
     <div class="section">
       <div class="section-title">Grafico Live <span style="color:var(--green);font-size:10px;">● real-time TradingView</span></div>
       <div class="tv-box">
