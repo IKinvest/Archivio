@@ -1598,6 +1598,8 @@ const stocks = {
   META: { ticker:'META', name:'Meta Platforms', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'Downtrend',cls:'pill-red'}], desc:'Meta — downtrend confermato. Esclusa dalla watchlist attiva.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Downtrend confermato. Non entrare ora.', livelli:[{label:'Stato',value:'Downtrend — da evitare',cls:'negative'}], tv_symbol:'NASDAQ:META', news_url:'https://finance.yahoo.com/quote/META/news/' },
   AMZN: { ticker:'AMZN', name:'Amazon.com Inc.', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'AWS + AI',cls:'pill-yellow'}], desc:'Amazon — leader cloud AWS, AI investimenti massivi. Da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive.', livelli:[{label:'Prezzo',value:'~$241',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:AMZN', news_url:'https://finance.yahoo.com/quote/AMZN/news/' },
   AI: { ticker:'AI', name:'C3.ai Inc.', exchange:'NYSE', badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Cautela',cls:'pill-gray'},{text:'A/D negativa',cls:'pill-red'}], desc:'C3.ai piattaforma AI enterprise. A/D Line fortemente negativa strutturale — distribuzione in corso. Downtrend pluriennale. Da monitorare con molta cautela.', eventi_passati:[{data:'9 Giu 2026',testo:'A $11,16 — sulla MM settimanale. RSI 46,7 debole.'}], eventi_futuri:[], grafici:[], analisi:'A/D Line negativa di lungo periodo — segnale molto negativo. Non entrare ora. Solo watchlist informativa.', livelli:[{label:'Stato',value:'Watchlist con cautela',cls:'negative'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:AI', news_url:'https://finance.yahoo.com/quote/AI/news/' },
+  MRVL: {
+    ticker:'MRVL', name:'Marvell Technology', exchange:'NASDAQ',
     badges:[{text:'Pre-Index S&P500',cls:'pill-yellow'},{text:'22 Giugno',cls:'pill-red'},{text:'Pullback $260-275',cls:'pill-blue'}],
     desc:'Marvell entra nell\'S&P500 il 22 giugno — tutti gli ETF S&P500 devono comprare. Pressione compratori meccanica garantita. Dopo il +11% post-annuncio e il -14% di oggi, ora a $248. Aspettare pullback $260-275.',
     eventi_passati:[
@@ -1690,7 +1692,7 @@ function initTVWidget(ticker, symbol) {
   container.appendChild(wrapper);
 }
 
-
+function showHome(el) {
   document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('home-view').style.display='block';
