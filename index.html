@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IKinvest — Trading Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f4f6f9;
@@ -22,16 +22,16 @@
     --card: #ffffff;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:'DM Sans', sans-serif; display:flex; min-height:100vh; font-size:16px; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; display:flex; min-height:100vh; font-size:15px; }
   #sidebar {
-    width:220px; min-width:220px; background:var(--bg2); border-right:1px solid var(--border);
+    width:230px; min-width:230px; background:var(--bg2); border-right:1px solid var(--border);
     display:flex; flex-direction:column; position:fixed; top:0; left:0; height:100vh; overflow-y:auto; z-index:100;
   }
   .logo { padding:16px 16px 12px; border-bottom:1px solid var(--border); font-family:'Space Mono', monospace; font-size:14px; color:var(--accent); letter-spacing:1px; }
   .logo span { color:var(--text3); font-size:10px; letter-spacing:1px; display:block; margin-top:2px; }
   .nav-section { padding:8px 0 4px; }
   .nav-label { padding:4px 14px 4px; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); font-family:'Space Mono', monospace; }
-  .nav-item { padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text2); transition:all 0.12s; border-left:2px solid transparent; }
+  .nav-item { padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text2); transition:all 0.12s; border-left:2px solid transparent; }
   .nav-item:hover { background:var(--bg3); color:var(--text); }
   .nav-item.active { background:#e8f0fb; color:var(--accent); border-left-color:var(--accent); font-weight:600; }
   .nav-item .badge { margin-left:auto; font-size:9px; padding:1px 5px; border-radius:8px; font-family:'Space Mono', monospace; }
@@ -45,7 +45,7 @@
   .dot-yellow { background:var(--yellow); }
   .dot-blue { background:var(--accent); }
   .dot-gray { background:var(--text3); }
-  #main { margin-left:220px; flex:1; }
+  #main { margin-left:230px; flex:1; }
   .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:10px 24px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:50; }
   .topbar-title { font-family:'Space Mono', monospace; font-size:12px; color:var(--text3); }
   .topbar-title span { color:var(--accent); }
@@ -53,17 +53,17 @@
   #home-view { padding:20px 24px; }
   .home-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
   .stat-card { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
-  .stat-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
-  .stat-value { font-family:'Space Mono', monospace; font-size:26px; font-weight:800; }
-  .stat-sub { font-size:11px; color:var(--text2); margin-top:2px; }
+  .stat-label { font-size:11px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; font-weight:500; }
+  .stat-value { font-family:'Inter', sans-serif; font-size:28px; font-weight:700; letter-spacing:-0.5px; }
+  .stat-sub { font-size:12px; color:var(--text2); margin-top:2px; }
   .positive { color:var(--green); }
   .negative { color:var(--red); }
   .neutral { color:var(--text); }
   .yellow { color:var(--yellow); }
   #stock-view { display:none; padding:16px 24px; max-width:1100px; }
   .stock-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
-  .stock-ticker { font-family:'Space Mono', monospace; font-size:30px; color:var(--accent); font-weight:800; }
-  .stock-name { font-size:13px; color:var(--text2); margin-top:2px; }
+  .stock-ticker { font-family:'Inter', sans-serif; font-size:32px; color:var(--accent); font-weight:800; letter-spacing:-1px; }
+  .stock-name { font-size:14px; color:var(--text2); margin-top:2px; }
   .stock-badges { display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
   .pill { padding:3px 10px; border-radius:12px; font-size:10px; font-family:'Space Mono', monospace; letter-spacing:0.5px; }
   .pill-green { background:#d3f9d8; color:var(--green); }
@@ -72,42 +72,42 @@
   .pill-blue { background:#d0ebff; color:var(--accent); }
   .pill-gray { background:var(--bg3); color:var(--text2); }
   .stock-actions { display:flex; gap:8px; }
-  .btn-action { padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:5px; cursor:pointer; font-size:11px; text-decoration:none; display:flex; align-items:center; gap:5px; transition:all 0.12s; }
+  .btn-action { padding:6px 12px; background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:5px; cursor:pointer; font-size:12px; text-decoration:none; display:flex; align-items:center; gap:5px; transition:all 0.12s; }
   .btn-action:hover { border-color:var(--accent); color:var(--accent); background:#e8f0fb; }
   .section { margin-bottom:16px; }
   .section-title { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); margin-bottom:8px; display:flex; align-items:center; gap:8px; font-family:'Space Mono', monospace; }
   .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
   .box { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:14px 16px; }
   .box-title { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; font-family:'Space Mono', monospace; }
-  .desc-text { font-size:15px; line-height:1.7; color:var(--text2); }
+  .desc-text { font-size:14px; line-height:1.7; color:var(--text2); }
   .events-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .event-item { display:flex; gap:10px; padding:6px 0; border-bottom:1px solid var(--border); }
   .event-item:last-child { border-bottom:none; }
   .event-date { font-family:'Space Mono', monospace; font-size:10px; color:var(--accent); min-width:65px; padding-top:1px; }
-  .event-text { font-size:12px; color:var(--text2); line-height:1.5; }
+  .event-text { font-size:13px; color:var(--text2); line-height:1.5; }
   .charts-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .chart-box { background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
   .chart-box-header { padding:8px 12px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
   .chart-box-title { font-size:11px; color:var(--text2); font-family:'Space Mono', monospace; }
   .chart-box-date { font-size:10px; color:var(--text3); }
   .chart-img { width:100%; display:block; cursor:zoom-in; transition:opacity 0.15s; }
-  .chart-img:hover { opacity:0.9; }
-  .chart-notes { padding:8px 12px; font-size:11px; color:var(--text2); line-height:1.5; background:var(--bg3); border-top:1px solid var(--border); }
+  .chart-img:hover { opacity:0.85; }
+  .chart-notes { padding:8px 12px; font-size:12px; color:var(--text2); line-height:1.5; background:var(--bg3); border-top:1px solid var(--border); }
   .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .analysis-text { font-size:12px; color:var(--text2); line-height:1.6; }
-  .level-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); }
+  .analysis-text { font-size:13px; color:var(--text2); line-height:1.6; }
+  .level-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); }
   .level-row:last-child { border-bottom:none; }
-  .level-label { font-size:15px; color:var(--text); font-weight:700; }
-  .level-value { font-family:'Space Mono', monospace; font-size:18px; font-weight:800; }
+  .level-label { font-size:14px; color:var(--text); font-weight:500; }
+  .level-value { font-family:'Inter', sans-serif; font-size:16px; font-weight:700; letter-spacing:-0.3px; }
   .tv-box { background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
   .tv-header { padding:8px 12px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
   .tv-title { font-size:11px; color:var(--text2); font-family:'Space Mono', monospace; display:flex; align-items:center; gap:6px; }
   .live-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
+  #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.88); z-index:9999; justify-content:center; align-items:center; cursor:zoom-out; }
   #lightbox.open { display:flex; }
-  #lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
-  #lightbox-caption { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.7); color:#fff; padding:6px 14px; border-radius:20px; font-size:12px; }
+  #lightbox img { max-width:92vw; max-height:92vh; width:auto; height:auto; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.5); object-fit:contain; }
+  #lightbox-caption { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.7); color:#fff; padding:6px 14px; border-radius:20px; font-size:12px; white-space:nowrap; }
   .alert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
   .alert-card { background:var(--card); border-radius:6px; padding:12px 14px; }
   .alert-card.red { border:1px solid #ffc9c9; background:#fff5f5; }
@@ -116,10 +116,10 @@
   .cal-item { display:flex; gap:12px; padding:8px 14px; border-bottom:1px solid var(--border); align-items:flex-start; }
   .cal-item:last-child { border-bottom:none; }
   .cal-date { font-family:'Space Mono', monospace; font-size:10px; min-width:55px; padding-top:1px; }
-  .cal-text { font-size:12px; color:var(--text2); }
+  .cal-text { font-size:13px; color:var(--text2); }
   .page-header { margin-bottom:16px; }
-  .page-title { font-family:'Space Mono', monospace; font-size:17px; color:var(--text); }
-  .page-sub { font-size:12px; color:var(--text2); margin-top:4px; }
+  .page-title { font-family:'Inter', sans-serif; font-size:20px; font-weight:700; color:var(--text); letter-spacing:-0.3px; }
+  .page-sub { font-size:13px; color:var(--text2); margin-top:4px; }
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background:var(--bg); }
   ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
@@ -142,47 +142,68 @@
 
   <div class="nav-section">
     <div class="nav-label">Portafoglio</div>
-    <div class="nav-item" onclick="showStock('INTC',this)"><span class="nav-dot dot-green"></span> Intel <span class="badge badge-green">11 az.</span></div>
-    <div class="nav-item" onclick="showStock('NVDA',this)"><span class="nav-dot dot-green"></span> Nvidia <span class="badge badge-green">11 az.</span></div>
-    <div class="nav-item" onclick="showStock('TSM',this)"><span class="nav-dot dot-green"></span> Taiwan Semi <span class="badge badge-green">2 az.</span></div>
-    <div class="nav-item" onclick="showStock('AMKR',this)"><span class="nav-dot dot-green"></span> Amkor Tech <span class="badge badge-green">12 az.</span></div>
-    <div class="nav-item" onclick="showStock('PLTR',this)"><span class="nav-dot dot-green"></span> Palantir <span class="badge badge-blue">2 az.</span></div>
     <div class="nav-item" onclick="showStock('ZS',this)"><span class="nav-dot dot-red"></span> Zscaler <span class="badge badge-red">⚠ $120</span></div>
-    <div class="nav-item" onclick="showStock('FRMI',this)"><span class="nav-dot dot-red"></span> Fermi <span class="badge badge-red">⚠$5</span></div>
+    <div class="nav-item" onclick="showStock('TSM',this)"><span class="nav-dot dot-green"></span> Taiwan Semi <span class="badge badge-green">2 az.</span></div>
+    <div class="nav-item" onclick="showStock('INTC',this)"><span class="nav-dot dot-green"></span> Intel <span class="badge badge-green">11 az.</span></div>
+    <div class="nav-item" onclick="showStock('AMKR',this)"><span class="nav-dot dot-green"></span> Amkor Tech <span class="badge badge-green">12 az.</span></div>
     <div class="nav-item" onclick="showStock('ASTS',this)"><span class="nav-dot dot-red"></span> AST SpaceMobile <span class="badge badge-red">⚠</span></div>
     <div class="nav-item" onclick="showStock('ALMU',this)"><span class="nav-dot dot-yellow"></span> Aeluma</div>
+    <div class="nav-item" onclick="showStock('NVDA',this)"><span class="nav-dot dot-green"></span> Nvidia <span class="badge badge-green">9 az.</span></div>
+    <div class="nav-item" onclick="showStock('EGAIN',this)"><span class="nav-dot dot-yellow"></span> eGain</div>
+    <div class="nav-item" onclick="showStock('CARR',this)"><span class="nav-dot dot-green"></span> Carrier Global</div>
+    <div class="nav-item" onclick="showStock('FRMI',this)"><span class="nav-dot dot-red"></span> Fermi <span class="badge badge-red">⚠ $5</span></div>
+    <div class="nav-item" onclick="showStock('GHL',this)"><span class="nav-dot dot-yellow"></span> Grab (GHL)</div>
+    <div class="nav-item" onclick="showStock('PLTR',this)"><span class="nav-dot dot-red"></span> Palantir <span class="badge badge-red">⚠ $120</span></div>
   </div>
 
   <div class="nav-section">
-    <div class="nav-label">Watchlist AI/Chip</div>
-    <div class="nav-item" onclick="showStock('AVGO',this)"><span class="nav-dot dot-yellow"></span> Broadcom</div>
-    <div class="nav-item" onclick="showStock('ALAB',this)"><span class="nav-dot dot-yellow"></span> Astera Labs</div>
+    <div class="nav-label">Watchlist AI</div>
+    <div class="nav-item" onclick="showStock('ALMU',this)"><span class="nav-dot dot-yellow"></span> Aeluma <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('AIRJ',this)"><span class="nav-dot dot-gray"></span> AirJoule Tech <span class="badge badge-gray">spec.</span></div>
+    <div class="nav-item" onclick="showStock('AMKR',this)"><span class="nav-dot dot-green"></span> Amkor Tech <span class="badge badge-green">ptf</span></div>
     <div class="nav-item" onclick="showStock('AAOI',this)"><span class="nav-dot dot-yellow"></span> Applied Optoelec</div>
-    <div class="nav-item" onclick="showStock('CBRS',this)"><span class="nav-dot dot-yellow"></span> Cerebras Systems</div>
+    <div class="nav-item" onclick="showStock('ASX',this)"><span class="nav-dot dot-yellow"></span> ASE Tech <span class="badge badge-blue">ordine</span></div>
+    <div class="nav-item" onclick="showStock('ALAB',this)"><span class="nav-dot dot-yellow"></span> Astera Labs</div>
+    <div class="nav-item" onclick="showStock('AXTI',this)"><span class="nav-dot dot-yellow"></span> AXT Inc</div>
+    <div class="nav-item" onclick="showStock('BBAI',this)"><span class="nav-dot dot-gray"></span> BigBear.ai <span class="badge badge-gray">spec.</span></div>
+    <div class="nav-item" onclick="showStock('AVGO',this)"><span class="nav-dot dot-yellow"></span> Broadcom</div>
+    <div class="nav-item" onclick="showStock('AI',this)"><span class="nav-dot dot-gray"></span> C3.ai <span class="badge badge-gray">cautela</span></div>
+    <div class="nav-item" onclick="showStock('CBRS',this)"><span class="nav-dot dot-yellow"></span> Cerebras</div>
     <div class="nav-item" onclick="showStock('CIEN',this)"><span class="nav-dot dot-yellow"></span> Ciena</div>
     <div class="nav-item" onclick="showStock('COHR',this)"><span class="nav-dot dot-yellow"></span> Coherent</div>
-    <div class="nav-item" onclick="showStock('LITE',this)"><span class="nav-dot dot-yellow"></span> Lumentum</div>
     <div class="nav-item" onclick="showStock('FN',this)"><span class="nav-dot dot-yellow"></span> Fabrinet</div>
-    <div class="nav-item" onclick="showStock('NBIS',this)"><span class="nav-dot dot-yellow"></span> Nebius</div>
-    <div class="nav-item" onclick="showStock('ASX',this)"><span class="nav-dot dot-yellow"></span> ASE Tech <span class="badge badge-blue">ordine</span></div>
     <div class="nav-item" onclick="showStock('GFS',this)"><span class="nav-dot dot-yellow"></span> GlobalFoundries</div>
     <div class="nav-item" onclick="showStock('HIVE',this)"><span class="nav-dot dot-yellow"></span> Hive Digital</div>
+    <div class="nav-item" onclick="showStock('INTC',this)"><span class="nav-dot dot-green"></span> Intel <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('LITE',this)"><span class="nav-dot dot-yellow"></span> Lumentum</div>
+    <div class="nav-item" onclick="showStock('MRVL',this)"><span class="nav-dot dot-yellow"></span> Marvell <span class="badge badge-yellow">22 Giu</span></div>
+    <div class="nav-item" onclick="showStock('NBIS',this)"><span class="nav-dot dot-yellow"></span> Nebius</div>
+    <div class="nav-item" onclick="showStock('PLTR',this)"><span class="nav-dot dot-red"></span> Palantir <span class="badge badge-green">ptf</span></div>
     <div class="nav-item" onclick="showStock('SNOW',this)"><span class="nav-dot dot-yellow"></span> Snowflake</div>
     <div class="nav-item" onclick="showStock('SMCI',this)"><span class="nav-dot dot-yellow"></span> Super Micro</div>
-    <div class="nav-item" onclick="showStock('AXTI',this)"><span class="nav-dot dot-yellow"></span> AXT Inc</div>
-    <div class="nav-item" onclick="showStock('MU',this)"><span class="nav-dot dot-yellow"></span> Micron</div>
-    <div class="nav-item" onclick="showStock('AMD',this)"><span class="nav-dot dot-yellow"></span> AMD</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Watchlist Balene 🐋</div>
+    <div class="nav-item" onclick="showStock('NVDA',this)"><span class="nav-dot dot-green"></span> Nvidia <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('TSLA',this)"><span class="nav-dot dot-yellow"></span> Tesla</div>
     <div class="nav-item" onclick="showStock('GOOG',this)"><span class="nav-dot dot-yellow"></span> Alphabet</div>
+    <div class="nav-item" onclick="showStock('AMZN',this)"><span class="nav-dot dot-yellow"></span> Amazon</div>
+    <div class="nav-item" onclick="showStock('MSFT',this)"><span class="nav-dot dot-yellow"></span> Microsoft</div>
     <div class="nav-item" onclick="showStock('AAPL',this)"><span class="nav-dot dot-yellow"></span> Apple</div>
+    <div class="nav-item" onclick="showStock('META',this)"><span class="nav-dot dot-yellow"></span> Meta</div>
+    <div class="nav-item" onclick="showStock('AMD',this)"><span class="nav-dot dot-yellow"></span> AMD</div>
+    <div class="nav-item" onclick="showStock('TSM',this)"><span class="nav-dot dot-green"></span> Taiwan Semi <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('MU',this)"><span class="nav-dot dot-yellow"></span> Micron</div>
   </div>
 
   <div class="nav-section">
     <div class="nav-label">Watchlist Space 🚀</div>
+    <div class="nav-item" onclick="showStock('ASTS',this)"><span class="nav-dot dot-red"></span> AST SpaceMobile <span class="badge badge-green">ptf</span></div>
     <div class="nav-item" onclick="showStock('RKLB',this)"><span class="nav-dot dot-yellow"></span> Rocket Lab</div>
     <div class="nav-item" onclick="showStock('RDW',this)"><span class="nav-dot dot-yellow"></span> Redwire</div>
-    <div class="nav-item" onclick="showStock('KRMN',this)"><span class="nav-dot dot-yellow"></span> Karman Space</div>
     <div class="nav-item" onclick="showStock('FJET',this)"><span class="nav-dot dot-gray"></span> Starfighter <span class="badge badge-gray">spec.</span></div>
-    <div class="nav-item" onclick="showStock('ASTS',this)"><span class="nav-dot dot-red"></span> AST SpaceMobile</div>
+    <div class="nav-item" onclick="showStock('KRMN',this)"><span class="nav-dot dot-gray"></span> Karman <span class="badge badge-gray">evitare</span></div>
   </div>
 
   <div class="nav-section">
@@ -190,34 +211,42 @@
     <div class="nav-item" onclick="showStock('IONQ',this)"><span class="nav-dot dot-green"></span> IonQ <span class="badge badge-green">🎯</span></div>
     <div class="nav-item" onclick="showStock('QBTS',this)"><span class="nav-dot dot-green"></span> D-Wave <span class="badge badge-green">🎯</span></div>
     <div class="nav-item" onclick="showStock('IBM',this)"><span class="nav-dot dot-yellow"></span> IBM <span class="badge badge-blue">$10B</span></div>
-    <div class="nav-item" onclick="showStock('INFQ',this)"><span class="nav-dot dot-yellow"></span> Infleqution</div>
-    <div class="nav-item" onclick="showStock('XNDU',this)"><span class="nav-dot dot-gray"></span> Xanadu <span class="badge badge-gray">spec.</span></div>
     <div class="nav-item" onclick="showStock('RGTI',this)"><span class="nav-dot dot-yellow"></span> Rigetti</div>
+    <div class="nav-item" onclick="showStock('GFS',this)"><span class="nav-dot dot-yellow"></span> GlobalFoundries</div>
+    <div class="nav-item" onclick="showStock('INFQ',this)"><span class="nav-dot dot-gray"></span> Infleqtion <span class="badge badge-gray">sec.</span></div>
+    <div class="nav-item" onclick="showStock('XNDU',this)"><span class="nav-dot dot-gray"></span> Xanadu <span class="badge badge-gray">spec.</span></div>
     <div class="nav-item" onclick="showStock('QUTM',this)"><span class="nav-dot dot-blue"></span> VanEck Quantum ETF</div>
   </div>
 
   <div class="nav-section">
     <div class="nav-label">Pre-Index S&P500 📈</div>
-    <div class="nav-item" onclick="showStock('SOFI',this)"><span class="nav-dot dot-green"></span> SoFi Tech <span class="badge badge-red">⚠️$15</span></div>
+    <div class="nav-item" onclick="showStock('SOFI',this)"><span class="nav-dot dot-green"></span> SoFi Tech <span class="badge badge-red">⚠️ $15</span></div>
     <div class="nav-item" onclick="showStock('RDDT',this)"><span class="nav-dot dot-green"></span> Reddit <span class="badge badge-green">Set 26</span></div>
-    <div class="nav-item" onclick="showStock('ALNY',this)"><span class="nav-dot dot-yellow"></span> Alnylam <span class="badge badge-yellow">Set 26</span></div>
-    <div class="nav-item" onclick="showStock('AFRM',this)"><span class="nav-dot dot-yellow"></span> Affirm</div>
-    <div class="nav-item" onclick="showStock('STRK',this)"><span class="nav-dot dot-gray"></span> MicroStrategy PFD-A</div>
-    <div class="nav-item" onclick="showStock('MRVL',this)"><span class="nav-dot dot-yellow"></span> Marvell <span class="badge badge-yellow">22 Giu</span></div>
+    <div class="nav-item" onclick="showStock('ALNY',this)"><span class="nav-dot dot-yellow"></span> Alnylam <span class="badge badge-yellow">aspettare</span></div>
   </div>
 
   <div class="nav-section">
-    <div class="nav-label">Watchlist Balene 🐋</div>
-    <div class="nav-item" onclick="showStock('AMD',this)"><span class="nav-dot dot-yellow"></span> AMD</div>
-    <div class="nav-item" onclick="showStock('GOOG',this)"><span class="nav-dot dot-yellow"></span> Alphabet</div>
-    <div class="nav-item" onclick="showStock('AAPL',this)"><span class="nav-dot dot-yellow"></span> Apple</div>
-  </div>
-
-  <div class="nav-section">
-    <div class="nav-label">Speculativi</div>
-    <div class="nav-item" onclick="showStock('AIRJ',this)"><span class="nav-dot dot-gray"></span> AirJoule Tech</div>
-    <div class="nav-item" onclick="showStock('BBAI',this)"><span class="nav-dot dot-gray"></span> BigBear.ai</div>
-    <div class="nav-item" onclick="showStock('AMPX',this)"><span class="nav-dot dot-gray"></span> Amprius Tech</div>
+    <div class="nav-label">Interessanti 👀</div>
+    <div class="nav-item" onclick="showStock('AMPX',this)"><span class="nav-dot dot-yellow"></span> Amprius Tech</div>
+    <div class="nav-item" onclick="showStock('BE',this)"><span class="nav-dot dot-yellow"></span> Bloom Energy</div>
+    <div class="nav-item" onclick="showStock('CACI',this)"><span class="nav-dot dot-yellow"></span> CACI International</div>
+    <div class="nav-item" onclick="showStock('GLW',this)"><span class="nav-dot dot-yellow"></span> Corning</div>
+    <div class="nav-item" onclick="showStock('GHL',this)"><span class="nav-dot dot-yellow"></span> Grab <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('NFLX',this)"><span class="nav-dot dot-yellow"></span> Netflix</div>
+    <div class="nav-item" onclick="showStock('CRM',this)"><span class="nav-dot dot-yellow"></span> Salesforce</div>
+    <div class="nav-item" onclick="showStock('STX',this)"><span class="nav-dot dot-yellow"></span> Seagate</div>
+    <div class="nav-item" onclick="showStock('NOW',this)"><span class="nav-dot dot-yellow"></span> ServiceNow</div>
+    <div class="nav-item" onclick="showStock('SNOW',this)"><span class="nav-dot dot-yellow"></span> Snowflake</div>
+    <div class="nav-item" onclick="showStock('SOUN',this)"><span class="nav-dot dot-gray"></span> SoundHound</div>
+    <div class="nav-item" onclick="showStock('TER',this)"><span class="nav-dot dot-yellow"></span> Teradyne</div>
+    <div class="nav-item" onclick="showStock('VST',this)"><span class="nav-dot dot-yellow"></span> Vistra</div>
+    <div class="nav-item" onclick="showStock('ZETA',this)"><span class="nav-dot dot-yellow"></span> Zeta Global</div>
+    <div class="nav-item" onclick="showStock('ZS',this)"><span class="nav-dot dot-red"></span> Zscaler <span class="badge badge-green">ptf</span></div>
+    <div class="nav-item" onclick="showStock('MELI',this)"><span class="nav-dot dot-yellow"></span> MercadoLibre</div>
+    <div class="nav-item" onclick="showStock('PATH',this)"><span class="nav-dot dot-yellow"></span> UiPath</div>
+    <div class="nav-item" onclick="showStock('CRWV',this)"><span class="nav-dot dot-yellow"></span> CoreWeave</div>
+    <div class="nav-item" onclick="showStock('DDOG',this)"><span class="nav-dot dot-yellow"></span> Datadog</div>
+    <div class="nav-item" onclick="showStock('MNTS',this)"><span class="nav-dot dot-gray"></span> Momentus <span class="badge badge-gray">spec.</span></div>
   </div>
 </nav>
 
@@ -1451,8 +1480,124 @@ const stocks = {
     tv_symbol:'NASDAQ:ALMU',
     news_url:'https://finance.yahoo.com/quote/ALMU/news/',
   },
-  MRVL: {
-    ticker:'MRVL', name:'Marvell Technology', exchange:'NASDAQ',
+  VST: {
+    ticker:'VST', name:'Vistra Corp.', exchange:'NYSE',
+    badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Energy + AI',cls:'pill-yellow'},{text:'Downtrend',cls:'pill-red'}],
+    desc:'Vistra è uno dei maggiori produttori di energia elettrica USA — nucleare, gas e rinnovabili. Beneficiario della domanda energetica esplosa per i data center AI. Da $250 a $146 in correzione pesante.',
+    eventi_passati:[{data:'2026',testo:'Da $250 a $146 — correzione -42% dai massimi'},{data:'9 Giu 2026',testo:'A $146 — RSI 42,8 quasi ipervenduto'}],
+    eventi_futuri:[{data:'2026',testo:'Domanda elettrica AI data center — catalyst strutturale'}],
+    grafici:[
+      {file:'VST_weekly.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $100 a $250 poi correzione pesante a $146. MM settimanale $156,58. RSI 42,8 — quasi ipervenduto. Downtrend in corso.'},
+      {file:'VST_daily.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Laterale tra $140-$170 da mesi. MM giornaliera $149,95. RSI 42,7 debole. Volume anomalo.'},
+    ],
+    analisi:'Fondamentali solidi ma downtrend tecnico confermato. Non entrare finché non si vede inversione. Livello $130-140 zona volumetrica massima — aspettare.',
+    livelli:[
+      {label:'Livello A',value:'$130 – $135 — supporto volumetrico',cls:'positive'},
+      {label:'Livello B',value:'$145 – $150 ← ZONA ATTUALE',cls:'neutral'},
+      {label:'Stop',value:'Sotto $120',cls:'negative'},
+      {label:'Target',value:'$180 – $200',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:VST',
+    news_url:'https://finance.yahoo.com/quote/VST/news/',
+  },
+  TER: {
+    ticker:'TER', name:'Teradyne Inc.', exchange:'NASDAQ',
+    badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Semiconduttori Test',cls:'pill-yellow'},{text:'Target $330-360',cls:'pill-green'}],
+    desc:'Teradyne è il leader mondiale nel testing automatico di semiconduttori e robotica industriale. Beneficiario diretto della domanda di chip AI — ogni chip prodotto deve essere testato. Da $80 a $413 poi correzione a $360.',
+    eventi_passati:[{data:'2026',testo:'Da $80 a $413 (+416%) in 12 mesi — rally straordinario'},{data:'9 Giu 2026',testo:'A $360 — MM settimanale $330,81. RSI 61,5.'}],
+    eventi_futuri:[{data:'2026',testo:'Crescita testing AI chips — domanda strutturale'}],
+    grafici:[
+      {file:'TER_weekly.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $77 a $413 in 12 mesi. MM settimanale $330,81. RSI 61,5 — neutro/rialzista. Correzione fisiologica in corso.'},
+      {file:'TER_daily.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Spike a $413, poi correzione a $360. MM giornaliera $365,40. RSI 48,2 — neutro. Zona volumetrica $300-380.'},
+    ],
+    analisi:'Business model solido — ogni chip AI prodotto richiede testing. Correzione da massimi è opportunità. Target $330-360 zona MM settimanale.',
+    livelli:[
+      {label:'Livello A',value:'$330 – $336 — MM settimanale',cls:'positive'},
+      {label:'Livello B',value:'$355 – $370 ← ZONA ATTUALE',cls:'positive'},
+      {label:'Stop',value:'Sotto $300',cls:'negative'},
+      {label:'Target',value:'$400 – $420',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:TER',
+    news_url:'https://finance.yahoo.com/quote/TER/news/',
+  },
+  SOUN: {
+    ticker:'SOUN', name:'SoundHound AI', exchange:'NASDAQ',
+    badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Voice AI',cls:'pill-yellow'},{text:'Speculativo',cls:'pill-gray'}],
+    desc:'SoundHound sviluppa tecnologia AI per riconoscimento vocale e assistenti voice AI per automotive e ristoranti. Nviddia investor. Da $20 a $7 in downtrend pesante. RSI ipervenduto.',
+    eventi_passati:[{data:'2026',testo:'Da $20 a $7 — downtrend costante -65%'},{data:'9 Giu 2026',testo:'A $7,01 — RSI 41,1 quasi ipervenduto'}],
+    eventi_futuri:[{data:'2026',testo:'Espansione automotive voice AI — catalyst potenziale'}],
+    grafici:[
+      {file:'SOUN_weekly.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $20 a $7 — downtrend strutturale. MM settimanale $7,83. RSI 41,1 — quasi ipervenduto. A/D Line negativa.'},
+      {file:'SOUN_daily.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Downtrend costante. MM giornaliera $8,25. RSI 35,8 — ipervenduto. Zona supporto $6-7.'},
+    ],
+    analisi:'Downtrend strutturale confermato su entrambi i timeframe. RSI ipervenduto può generare rimbalzo tecnico ma non inversione. Aspettare inversione confermata prima di entrare.',
+    livelli:[
+      {label:'Osservazione',value:'$6,00 – $7,00 — zona ipervenduto',cls:'neutral'},
+      {label:'Stop',value:'Sotto $5,50',cls:'negative'},
+      {label:'Target rimbalzo',value:'$9 – $10',cls:'positive'},
+      {label:'Note',value:'Speculativo — sizing micro',cls:'neutral'},
+    ],
+    tv_symbol:'NASDAQ:SOUN',
+    news_url:'https://finance.yahoo.com/quote/SOUN/news/',
+  },
+  NFLX: {
+    ticker:'NFLX', name:'Netflix Inc.', exchange:'NASDAQ',
+    badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Streaming Dominante',cls:'pill-yellow'},{text:'Downtrend',cls:'pill-red'}],
+    desc:'Netflix è il leader mondiale dello streaming con 301M+ abbonati. Crescita advertising tier forte. Da $124 a $81 in correzione pesante. RSI 37 — quasi ipervenduto. Fondamentali solidi ma tecnica debole.',
+    eventi_passati:[{data:'2026',testo:'Da $124 a $81 — correzione -35% dai massimi'},{data:'9 Giu 2026',testo:'A $81,54 — RSI 37,1 quasi ipervenduto'}],
+    eventi_futuri:[{data:'Q2 2026',testo:'Earnings — advertising tier + password sharing results'}],
+    grafici:[
+      {file:'NFLX_weekly.png',titolo:'Settimanale',data:'9 Giu 2026',note:'Da $124 a $81 — downtrend da massimi. MM settimanale $89,67. RSI 37,1 — quasi ipervenduto. Volume in calo.'},
+      {file:'NFLX_daily.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Downtrend costante. MM giornaliera $86,01. RSI 30,2 — ipervenduto. Zona supporto $78-82.'},
+    ],
+    analisi:'RSI ipervenduto su giornaliero può generare rimbalzo. Ma downtrend strutturale confermato — non è inversione. Aspettare tenuta $78-80 con volumi prima di entrare.',
+    livelli:[
+      {label:'Livello A',value:'$75 – $80 — supporto strutturale',cls:'positive'},
+      {label:'Livello B',value:'$82 – $87 ← ZONA ATTUALE',cls:'neutral'},
+      {label:'Stop',value:'Sotto $72',cls:'negative'},
+      {label:'Target',value:'$100 – $110',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:NFLX',
+    news_url:'https://finance.yahoo.com/quote/NFLX/news/',
+  },
+  BE: {
+    ticker:'BE', name:'Bloom Energy Corp.', exchange:'NYSE',
+    badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Fuel Cell AI Energy',cls:'pill-yellow'},{text:'Target $220-250',cls:'pill-green'}],
+    desc:'Bloom Energy produce celle a combustibile a idrogeno per data center AI — alternativa al grid per alimentazione continua. Accordi con hyperscalers per energia AI. Da $300 a $250 in correzione. RSI 50,7 neutro.',
+    eventi_passati:[{data:'Apr 2026',testo:'Picco $300 — multipli elevati'},{data:'9 Giu 2026',testo:'A $250-275 — correzione in corso. RSI 50,7 neutro.'}],
+    eventi_futuri:[{data:'2026',testo:'Nuovi contratti data center AI — catalyst principale'}],
+    grafici:[
+      {file:'chart_BE_giornaliero.png',titolo:'Giornaliero',data:'9 Giu 2026',note:'Da $300 a $275 (-8%). MM giornaliera $257. RSI 50,7 — neutro. OBV in salita — accumulo confermato.'},
+    ],
+    analisi:'Catalyst reale: la domanda energetica AI favorisce le celle a combustibile come soluzione per data center off-grid. OBV positivo. Target $220-250 zona volumetrica.',
+    livelli:[
+      {label:'Livello A',value:'$220 – $230 — supporto volumetrico',cls:'positive'},
+      {label:'Livello B',value:'$248 – $260 ← IN CORREZIONE',cls:'positive'},
+      {label:'Stop',value:'Sotto $200',cls:'negative'},
+      {label:'Target',value:'$300 – $320',cls:'positive'},
+    ],
+    tv_symbol:'NYSE:BE',
+    news_url:'https://finance.yahoo.com/quote/BE/news/',
+  },
+  CACI: { ticker:'CACI', name:'CACI International', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Difesa + AI',cls:'pill-yellow'}], desc:'CACI fornisce servizi IT e AI per agenzie governative USA (DoD, intelligence). Contratti ricorrenti pluriennali. Crescita ricavi solida. A $530 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$530',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:CACI', news_url:'https://finance.yahoo.com/quote/CACI/news/' },
+  GLW: { ticker:'GLW', name:'Corning Inc.', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Fibra Ottica AI',cls:'pill-yellow'}], desc:'Corning produce fibra ottica e display glass. Beneficiario diretto dell\'espansione infrastruttura AI (cavi fibra per data center). A $175 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$175',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:GLW', news_url:'https://finance.yahoo.com/quote/GLW/news/' },
+  CRM: { ticker:'CRM', name:'Salesforce Inc.', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'AI CRM',cls:'pill-yellow'}], desc:'Salesforce è il leader CRM enterprise. Agentforce AI integrato nel CRM — catalyst principale 2026. A $174 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$174',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:CRM', news_url:'https://finance.yahoo.com/quote/CRM/news/' },
+  STX: { ticker:'STX', name:'Seagate Technology', exchange:'NASDAQ', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Storage AI',cls:'pill-yellow'}], desc:'Seagate produce hard drive per data storage. Domanda AI per storage in forte crescita. A $846 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$846',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:STX', news_url:'https://finance.yahoo.com/quote/STX/news/' },
+  NOW: { ticker:'NOW', name:'ServiceNow Inc.', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'AI Enterprise',cls:'pill-yellow'}], desc:'ServiceNow è la piattaforma workflow AI enterprise leader. AI integrato in tutti i workflow aziendali. A $108 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$108',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:NOW', news_url:'https://finance.yahoo.com/quote/NOW/news/' },
+  ZETA: { ticker:'ZETA', name:'Zeta Global Holdings', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'AI Marketing',cls:'pill-gray'}], desc:'Zeta Global fornisce piattaforma AI per marketing data-driven. A $20,84 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$20,84',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:ZETA', news_url:'https://finance.yahoo.com/quote/ZETA/news/' },
+  MELI: { ticker:'MELI', name:'MercadoLibre Inc.', exchange:'NASDAQ', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'LatAm Ecommerce',cls:'pill-yellow'}], desc:'MercadoLibre è il leader ecommerce e fintech in America Latina. A $1.603 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$1.603',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:MELI', news_url:'https://finance.yahoo.com/quote/MELI/news/' },
+  PATH: { ticker:'PATH', name:'UiPath Inc.', exchange:'NYSE', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'RPA + AI',cls:'pill-yellow'}], desc:'UiPath è il leader in Robotic Process Automation con AI integrato. A $10,71 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$10,71',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:PATH', news_url:'https://finance.yahoo.com/quote/PATH/news/' },
+  CRWV: { ticker:'CRWV', name:'CoreWeave Inc.', exchange:'NASDAQ', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'AI Cloud GPU',cls:'pill-yellow'}], desc:'CoreWeave è il principale cloud provider specializzato in GPU per AI. IPO 2026. A $99 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$99',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:CRWV', news_url:'https://finance.yahoo.com/quote/CRWV/news/' },
+  DDOG: { ticker:'DDOG', name:'Datadog Inc.', exchange:'NASDAQ', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'AI Observability',cls:'pill-yellow'}], desc:'Datadog è la piattaforma leader di monitoring e observability per cloud/AI. Crescita ARR forte. A $230,91 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$230,91',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:DDOG', news_url:'https://finance.yahoo.com/quote/DDOG/news/' },
+  MNTS: { ticker:'MNTS', name:'Momentus Inc.', exchange:'NASDAQ', badges:[{text:'Interessanti',cls:'pill-blue'},{text:'Space Speculativo',cls:'pill-gray'}], desc:'Momentus fornisce servizi di trasporto in orbita (last-mile space delivery). Micro-cap con storia difficile. A $11,20 — da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive per analisi completa.', livelli:[{label:'Prezzo',value:'~$11,20',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:MNTS', news_url:'https://finance.yahoo.com/quote/MNTS/news/' },
+  EGAIN: { ticker:'EGAIN', name:'eGain Corp.', exchange:'NASDAQ', badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'80 az. @ $7,36',cls:'pill-blue'},{text:'AI Customer Service',cls:'pill-gray'}], desc:'eGain fornisce piattaforme AI per customer service enterprise. 80 azioni in portafoglio a $7,36. A $7,25 — sostanzialmente in pari.', eventi_passati:[{data:'9 Giu 2026',testo:'A $7,25 — P&L -€2,12 (-0,42%)'}], eventi_futuri:[], grafici:[], analisi:'Posizione piccola — gestire con stop mentale sotto $6.', livelli:[{label:'Carico',value:'$7,36 × 80 az.',cls:'neutral'},{label:'Stop mentale',value:'Sotto $6,00',cls:'negative'},{label:'Target',value:'$9 – $10',cls:'positive'}], tv_symbol:'NASDAQ:EGAIN', news_url:'https://finance.yahoo.com/quote/EGAIN/news/' },
+  CARR: { ticker:'CARR', name:'Carrier Global Corp.', exchange:'NYSE', badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'8 az. @ $65,12',cls:'pill-blue'},{text:'+9,87% ✅',cls:'pill-green'}], desc:'Carrier Global produce sistemi HVAC e refrigerazione. 8 azioni in portafoglio a $65,12. Sorpresa positiva del portafoglio — +9,87% oggi. A $71,23.', eventi_passati:[{data:'9 Giu 2026',testo:'A $71,23 — P&L +€44,36 (+9,87%) — miglior performance portafoglio oggi'}], eventi_futuri:[], grafici:[], analisi:'Posizione da tenere — fondamentali solidi, beneficiario domanda cooling per data center AI.', livelli:[{label:'Carico',value:'$65,12 × 8 az.',cls:'neutral'},{label:'Prezzo',value:'$71,23 ✅',cls:'positive'},{label:'Stop mentale',value:'Sotto $60',cls:'negative'},{label:'Target',value:'$80 – $85',cls:'positive'}], tv_symbol:'NYSE:CARR', news_url:'https://finance.yahoo.com/quote/CARR/news/' },
+  GHL: { ticker:'GHL', name:'Grab Holdings (ADR)', exchange:'NASDAQ', badges:[{text:'In Portafoglio',cls:'pill-green'},{text:'130 az. @ $3,50',cls:'pill-blue'},{text:'LatAm Ride + Food',cls:'pill-gray'}], desc:'Grab è il super-app leader in Southeast Asia (ride-hailing, food delivery, fintech). 130 azioni a $3,50. EBITDA $700M FY2026 attesi. A $3,30 — lieve perdita.', eventi_passati:[{data:'9 Giu 2026',testo:'A $3,30 — P&L -€20,64 (-5,26%)'}], eventi_futuri:[], grafici:[], analisi:'Posizione piccola — tenere. Non incrementare. Fondamentali in miglioramento ma insider vendevano.', livelli:[{label:'Carico',value:'$3,50 × 130 az.',cls:'neutral'},{label:'Prezzo',value:'$3,30',cls:'neutral'},{label:'Stop mentale',value:'Sotto $2,80',cls:'negative'},{label:'Target',value:'$4,50 – $5',cls:'positive'}], tv_symbol:'NASDAQ:GRAB', news_url:'https://finance.yahoo.com/quote/GRAB/news/' },
+  TSLA: { ticker:'TSLA', name:'Tesla Inc.', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'Da Evitare ora',cls:'pill-red'},{text:'No trend',cls:'pill-gray'}], desc:'Tesla — no trend tecnico confermato. Esclusa dalla watchlist attiva. Monitorare solo per eventuale inversione strutturale.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun setup operativo. Attendere inversione confermata prima di considerare ingresso.', livelli:[{label:'Stato',value:'No setup — da evitare',cls:'negative'}], tv_symbol:'NASDAQ:TSLA', news_url:'https://finance.yahoo.com/quote/TSLA/news/' },
+  MSFT: { ticker:'MSFT', name:'Microsoft Corp.', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'Downtrend strutturale',cls:'pill-red'}], desc:'Microsoft — downtrend strutturale confermato. Esclusa dalla watchlist attiva. Monitorare per inversione.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Downtrend strutturale confermato. Non entrare ora.', livelli:[{label:'Stato',value:'Downtrend — da evitare',cls:'negative'}], tv_symbol:'NASDAQ:MSFT', news_url:'https://finance.yahoo.com/quote/MSFT/news/' },
+  META: { ticker:'META', name:'Meta Platforms', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'Downtrend',cls:'pill-red'}], desc:'Meta — downtrend confermato. Esclusa dalla watchlist attiva.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Downtrend confermato. Non entrare ora.', livelli:[{label:'Stato',value:'Downtrend — da evitare',cls:'negative'}], tv_symbol:'NASDAQ:META', news_url:'https://finance.yahoo.com/quote/META/news/' },
+  AMZN: { ticker:'AMZN', name:'Amazon.com Inc.', exchange:'NASDAQ', badges:[{text:'Watchlist Balene',cls:'pill-blue'},{text:'AWS + AI',cls:'pill-yellow'}], desc:'Amazon — leader cloud AWS, AI investimenti massivi. Da analizzare con grafici.', eventi_passati:[], eventi_futuri:[], grafici:[], analisi:'Nessun grafico disponibile — da caricare su Drive.', livelli:[{label:'Prezzo',value:'~$241',cls:'neutral'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NASDAQ:AMZN', news_url:'https://finance.yahoo.com/quote/AMZN/news/' },
+  AI: { ticker:'AI', name:'C3.ai Inc.', exchange:'NYSE', badges:[{text:'Watchlist AI',cls:'pill-yellow'},{text:'Cautela',cls:'pill-gray'},{text:'A/D negativa',cls:'pill-red'}], desc:'C3.ai piattaforma AI enterprise. A/D Line fortemente negativa strutturale — distribuzione in corso. Downtrend pluriennale. Da monitorare con molta cautela.', eventi_passati:[{data:'9 Giu 2026',testo:'A $11,16 — sulla MM settimanale. RSI 46,7 debole.'}], eventi_futuri:[], grafici:[], analisi:'A/D Line negativa di lungo periodo — segnale molto negativo. Non entrare ora. Solo watchlist informativa.', livelli:[{label:'Stato',value:'Watchlist con cautela',cls:'negative'},{label:'Note',value:'Grafici da caricare',cls:'neutral'}], tv_symbol:'NYSE:AI', news_url:'https://finance.yahoo.com/quote/AI/news/' },
     badges:[{text:'Pre-Index S&P500',cls:'pill-yellow'},{text:'22 Giugno',cls:'pill-red'},{text:'Pullback $260-275',cls:'pill-blue'}],
     desc:'Marvell entra nell\'S&P500 il 22 giugno — tutti gli ETF S&P500 devono comprare. Pressione compratori meccanica garantita. Dopo il +11% post-annuncio e il -14% di oggi, ora a $248. Aspettare pullback $260-275.',
     eventi_passati:[
@@ -1480,12 +1625,34 @@ const stocks = {
 };
 
 function openLightbox(src, caption) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-caption').textContent = caption;
-  document.getElementById('lightbox').classList.add('open');
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.style.width = 'auto';
+  img.style.height = 'auto';
+  img.style.maxWidth = 'none';
+  img.style.maxHeight = 'none';
+  img.src = src;
+  img.onload = function() {
+    const nw = img.naturalWidth;
+    const nh = img.naturalHeight;
+    const vw = window.innerWidth * 0.95;
+    const vh = window.innerHeight * 0.95;
+    if (nw <= vw && nh <= vh) {
+      img.style.width = nw + 'px';
+      img.style.height = nh + 'px';
+    } else {
+      const ratio = Math.min(vw/nw, vh/nh);
+      img.style.width = (nw*ratio) + 'px';
+      img.style.height = (nh*ratio) + 'px';
+    }
+  };
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 
@@ -1567,18 +1734,19 @@ function showStock(ticker, el) {
       </div>
     </div>
     <div class="section">
-      <div class="section-title">Grafico Live <span style="color:var(--green);font-size:10px;">● real-time TradingView</span></div>
+      <div class="section-title">Grafico Live <span style="color:var(--green);font-size:10px;">● TradingView</span></div>
       <div class="tv-box">
         <div class="tv-header">
           <div class="tv-title"><span class="live-dot"></span>${s.ticker} — ${s.name}</div>
           <a class="btn-action" href="https://www.tradingview.com/chart/?symbol=${s.tv_symbol}" target="_blank" style="font-size:10px;padding:4px 8px;">Apri completo ↗</a>
         </div>
-        <div class="tradingview-widget-container" style="height:380px;">
-          <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"autosize":true,"symbol":"${s.tv_symbol}","interval":"D","timezone":"Europe/Rome","theme":"light","style":"1","locale":"it","hide_top_toolbar":false,"hide_legend":false,"save_image":false,"calendar":false,"support_host":"https://www.tradingview.com"}
-          <\/script>
-        </div>
+        <iframe
+          src="https://www.tradingview.com/widgetbar-chart-popup/?symbol=${s.tv_symbol}&interval=D&theme=light&locale=it&style=1&hide_top_toolbar=0&hide_legend=0&saveimage=0"
+          style="width:100%;height:400px;border:none;"
+          allowtransparency="true"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
       </div>
     </div>
   `;
