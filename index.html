@@ -228,6 +228,11 @@
     <div class="nav-item" onclick="showStock('IBM',this)"><span class="nav-dot dot-yellow"></span> IBM <span class="badge badge-blue">$245-250</span></div>
     <div class="nav-item" onclick="showStock('VST',this)"><span class="nav-dot dot-yellow"></span> Vistra <span class="badge badge-yellow">$147</span></div>
   </div>
+  <div class="nav-section">
+    <div class="nav-label">Lista Leopold</div>
+    <div class="nav-item" onclick="showStock('SNDK',this)"><span class="nav-dot dot-yellow"></span> SanDisk <span class="badge badge-blue">Storage AI</span></div>
+    <div class="nav-item" onclick="showStock('IREN',this)"><span class="nav-dot dot-yellow"></span> IREN <span class="badge badge-yellow">⚡ Liv.A</span></div>
+  </div>
 </nav>
 
 <main id="main">
@@ -1573,6 +1578,64 @@ const stocks = {
     ],
     tv_symbol:'NYSE:VST',
     news_url:'https://finance.yahoo.com/quote/VST/news/',
+  },
+  SNDK: {
+    ticker:'SNDK', name:'SanDisk Corporation', exchange:'NASDAQ',
+    badges:[{text:'Lista Leopold',cls:'pill-blue'},{text:'AI Storage',cls:'pill-blue'},{text:'Aspettare pullback',cls:'pill-yellow'}],
+    desc:'SanDisk è lo spin-off di Western Digital specializzato in NAND flash e SSD. Tesi AI: l\'esplosione dei dati (training, inference, agent memory, video AI) trasforma lo storage da commodity a bottleneck strutturale. Leopold lo ha come posizione #3 del suo fondo. Titolo da $277 (set 2025) a $2.137 oggi — trend parabolico. Buyback aggressivo annunciato post-earnings record.',
+    eventi_passati:[
+      {data:'Set 2025',testo:'Spin-off da Western Digital — quotazione a ~$277'},
+      {data:'2026',testo:'Earnings record — revenue data center esplosa'},
+      {data:'2026',testo:'Contratti pluriennali con hyperscaler — non più solo spot pricing'},
+      {data:'Giu 2026',testo:'A $2.137 — +671% dallo spin-off in 9 mesi'},
+    ],
+    eventi_futuri:[
+      {data:'2026',testo:'Buyback aggressivo annunciato — riduzione azioni outstanding'},
+      {data:'2026-2027',testo:'Crescita agentic AI → storage persistente = nuovo driver strutturale'},
+    ],
+    grafici:[
+      {file:'SNDK_weekly_16giu2026.png',titolo:'Settimanale',data:'16 Giu 2026',note:'Trend parabolico da $277 a $2.137 in 9 mesi. EMA200 weekly a $1.075 — prezzo al doppio. RSI 82-83 — fortemente ipercomprato strutturale. Volumi costanti sul rialzo, nessuna distribuzione evidente.'},
+      {file:'SNDK_daily_16giu2026.png',titolo:'Giornaliero',data:'16 Giu 2026',note:'Prezzo a $2.136, +1,37%. EMA daily ~$1.660 — prezzo 29% sopra. RSI 74-75 — ipercomprato. Cluster volumetrico principale tra $1.400-1.500. Primo supporto solido a $1.800 (ex resistenza).'},
+    ],
+    analisi:'Fondamentali eccellenti, tesi AI solida, management con background enterprise. Il rischio principale è ciclico: quando il prezzo NAND scende, i multipli crollano. Leopold ce l\'ha come #3 confermando la tesi storage come bottleneck AI. NON inseguire a $2.137 — RSI 82 weekly è un segnale di pericolo per nuovi ingressi. Aspettare pullback significativo.',
+    livelli:[
+      {label:'Prezzo attuale',value:'$2.137 — NON inseguire',cls:'negative'},
+      {label:'Liv.A Ingresso',value:'$1.800 — ex resistenza / primo supporto',cls:'positive'},
+      {label:'Liv.B Ingresso',value:'$1.600 – $1.660 — EMA daily + supporto volumetrico',cls:'positive'},
+      {label:'Stop Mentale',value:'Sotto $1.400',cls:'negative'},
+      {label:'Target',value:'$2.500+',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:SNDK',
+    news_url:'https://finance.yahoo.com/quote/SNDK/news/',
+  },
+  IREN: {
+    ticker:'IREN', name:'IREN Limited', exchange:'NASDAQ',
+    badges:[{text:'Lista Leopold',cls:'pill-blue'},{text:'AI Power / Compute',cls:'pill-blue'},{text:'Liv.A quasi raggiunto',cls:'pill-yellow'}],
+    desc:'IREN (ex Iris Energy) è un ex Bitcoin miner pivotato su AI cloud computing. Tesi: i miner sanno già trovare energia cheap e costruire data center ad alta densità — quando l\'AI ha creato una domanda economicamente superiore al mining, IREN ha convertito i suoi siti. Deal confermati con Microsoft e Nvidia. Leopold ce l\'ha come posizione #5. Upside target del video: $100 in 12-18 mesi da ~$60 attuale.',
+    eventi_passati:[
+      {data:'2025',testo:'Pivot da Bitcoin mining a AI cloud compute'},
+      {data:'2026',testo:'Deal Microsoft e Nvidia — credibilità al pivot confermata'},
+      {data:'Mag 2026',testo:'Rally da $30 a $70 in 2 mesi (+133%)'},
+      {data:'Giu 2026',testo:'Correzione in corso — prezzo a $60,52, EMA daily a ~$58-59'},
+    ],
+    eventi_futuri:[
+      {data:'2026',testo:'Espansione siti Texas — conversione power sites in AI revenue'},
+      {data:'12-18 mesi',testo:'Target potenziale $100 se esecuzione confermata'},
+    ],
+    grafici:[
+      {file:'IREN_weekly_16giu2026.png',titolo:'Settimanale',data:'16 Giu 2026',note:'Da $10 (2025) a $70 — trend strutturale potente. EMA weekly ~$47. RSI 59 — sano, non ipercomprato. Enorme cluster volumetrico $45-55 = supporto strutturale. MACD positivo in lieve rallentamento.'},
+      {file:'IREN_daily_16giu2026.png',titolo:'Giornaliero',data:'16 Giu 2026',note:'Correzione da $70 a $60. EMA daily ~$58-59 — prezzo ci è sopra di poco. RSI 54 — neutro. Livello Liv.A quasi raggiunto. Supporto $56-58 = primo livello difensivo.'},
+    ],
+    analisi:'Il più interessante dei due nuovi Leopold per timing di ingresso. RSI 54 daily e 59 weekly — non ipercomprato, spazio di salita strutturale. EMA daily a $58-59 funziona da supporto dinamico. Liv.A $55-58 quasi raggiunto — monitorare con attenzione. Alta speculazione: ex miner in pivot, balance sheet pesante, ma Microsoft + Nvidia come validatori danno credibilità.',
+    livelli:[
+      {label:'Prezzo attuale',value:'$60,52 — monitorare',cls:'neutral'},
+      {label:'Liv.A Ingresso',value:'$55 – $58 — EMA daily + supporto recente ⚡',cls:'positive'},
+      {label:'Liv.B Ingresso',value:'$47 – $50 — EMA weekly + cluster volumetrico',cls:'positive'},
+      {label:'Stop Mentale',value:'Sotto $40',cls:'negative'},
+      {label:'Target',value:'$80 – $85 (medio termine) / $100 (12-18m)',cls:'positive'},
+    ],
+    tv_symbol:'NASDAQ:IREN',
+    news_url:'https://finance.yahoo.com/quote/IREN/news/',
   },
 };
 
